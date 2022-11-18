@@ -6,4 +6,4 @@
 # Project List
 | Circle | Project Name |   Topic   | Stack | Score |
 | :----: | :----------: | :-------: | :---: | :---: |
-| 00     | [Libft](https://github.com/moeyg/42-cursus) | `Library` `Makefile` `Linked` `list` | C language |  |
+| 00     | [Libft](https://github.com/moeyg/42-cursus) | `Library` `Makefile` `Linked` `list` | <img src="https://img.shields.io/badge/c-A8B9CC?style=for-the-badge&logo=c&logoColor=white"> |  |
