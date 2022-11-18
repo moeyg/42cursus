@@ -1,3 +1,8 @@
 # 42-cursus
-## 42 본과정에서 공부한 과제 입니다.
-https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/stats?cursusId=21&coalitionId=86
+42 본과정에서 진행한 프로젝트 입니다.
+[![dogpark's 42 stats](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/stats?cursusId=21&coalitionId=86)](https://github.com/JaeSeoKim/badge42)]
+
+# Project List
+| Circle | Project Name |   Topic   | Stack | Score |
+| :----: | :----------- | :-------------| :---: | :---: | :---: |
+| 00     | [Libft](https://github.com/moeyg/42-cursus) | `Library` `Makefile` `Linked` `list` | C language |  |
