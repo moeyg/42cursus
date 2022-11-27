@@ -1,8 +1,8 @@
 #include "libft.h"
 
-int ft_isdigit(int c)
+int ft_isdigit(int ascii_num)
 {
-    if ('0' <= c && c <= '9')
+    if ('0' <= ascii_num && ascii_num <= '9')
         return (1);
     return (0);
 }
