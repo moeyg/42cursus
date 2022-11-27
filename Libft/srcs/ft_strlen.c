@@ -1,11 +1,14 @@
-#include "libft.h"
+// #include "libft.h"
+#include <stdio.h>
 
-size_t  strlen(const char *string)
+size_t  ft_strlen(const char *string)
 {
-    size_t  index;
+    size_t  length;
 
-    index = 0;
-    while (string[index] != '\0')
-        index ++;
-    return (index);
+    length = 0;
+    while (string[length] != '\0')
+    {
+        length ++;
+    }
+    return (length);
 }
