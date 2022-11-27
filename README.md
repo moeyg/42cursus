@@ -6,4 +6,4 @@
 # Project List
 | Circle | Project Name |   Topic   | Stack | Score |
 | :----: | :----------: | :-------: | :---: | :---: |
-| 00     | [Libft](https://github.com/moeyg/42-cursus/tree/main/Libft) | `Library` `Makefile` `Linked` `list` | <img src="https://img.shields.io/badge/c-A8B9CC?style=for-the-badge&logo=c&logoColor=white"> | [![dogpark's 42 Libft Score](https://badge42.vercel.app/api/v2/cl1t3grkn011109l3wpe6uvw6/project/2523043)](https://github.com/JaeSeoKim/badge42) |
+| 00     | [Libft](https://github.com/moeyg/42-cursus/tree/main/Libft) | `Library` `Makefile` `Linked` `list` | <img src="https://img.shields.io/badge/c-A8B9CC?style=for-the-badge&logo=c&logoColor=white"> |  |
