@@ -6,7 +6,7 @@
 
 // struct
 
-size_t  strlen(const char *string);
+size_t  ft_strlen(const char *string);
 
 int     ft_isalpha(int ascii_num);
 int     ft_isdigit(int ascii_num);
