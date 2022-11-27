@@ -6,9 +6,15 @@
 
 // struct
 
-int ft_isalpha(int c);
-int ft_isdigit(int c);
-int ft_isalnum(int c);
-int	ft_isascii(int c);
+size_t  strlen(const char *string);
 
+int     ft_isalpha(int ascii_num);
+int     ft_isdigit(int ascii_num);
+int     ft_isalnum(int ascii_num);
+int	    ft_isascii(int ascii_num);
+int     ft_isprint(int ascii_num);
+void    ft_bzero(void *string, size_t size);
+void    *ft_memset(void *pointer, int value, size_t length);
+void    *ft_memcpy(void *dest, const void *src, size_t length);
+void    *ft_memmove(void *dest, const void *src, size_t length);
 #endif
