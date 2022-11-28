@@ -119,12 +119,13 @@
 
 <br>
 
-| **Function**     | `strncmp`          |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `strncmp`                                                                                                                                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Header file**  | #include <string.h>                                                                                                                                                                                                                |
+| **Synopsis**     | int strncmp(const char *s1, const char *s2, size_t n);                                                                                                                                                                             |
+| **Description**  | The strncmp() function compares not more than n characters. Because strncmp() is designed for comparing strings rather than binary data, characters that appear after a ‘\0’ character are not compared.                           |
+| **Return value** | The strcmp() and strncmp() functions return an integer greater than, equal to, or less than 0, according as the string s1 is greater than, equal to, or less than the string s2. The comparison is done using unsigned characters. |
+| **Knowledge**    | 반환값을 도출하는 과정에서 `unsigned char` 로 캐스팅 하는 이유는 0을 기준으로 음수, 양수 값으로 반환되어야 하는데 부호로 인해 계산 결과 값이 달라질 수 있기 때문에 꼭 캐스팅 하는 과정이 필요하다.                                 |
 
 <br>
 
