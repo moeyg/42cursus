@@ -2,7 +2,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 HEADER  = ./libft.h
-SRCS = 	./ft_isalpha.c \
+SRCS = 	\
+		./ft_isalpha.c \
 		./ft_isdigit.c \
 		./ft_isalnum.c \
 		./ft_isascii.c \
@@ -36,8 +37,11 @@ SRCS = 	./ft_isalpha.c \
 		./ft_putstr_fd.c \
 		./ft_putendl_fd.c \
 		./ft_putnbr_fd.c
+
 OBJS = $(SRCS:.c=.o)
-SRCS_BONUS =	./ft_lstnew.c \
+
+SRCS_BONUS =	\
+				./ft_lstnew.c \
 				./ft_lstadd_front.c \
 				./ft_lstsize.c \
 				./ft_lstlast.c \
@@ -46,22 +50,32 @@ SRCS_BONUS =	./ft_lstnew.c \
 				./ft_lstclear.c \
 				./ft_lstiter.c \
 				./ft_lstmap.c
+
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+
 ifdef BONUS
 	OBJS_F = $(OBJS) $(OBJS_BONUS)
 else
 	OBJS_F = $(OBJS)
 endif
+
 all : $(NAME)
+
 .c.o : $(HEADER)
 	$(CC) $(CFLAG) -c $< -o $@
+
 $(NAME) : $(OBJS_F)
 	ar rc $(NAME) $(OBJS_F)
+
 bonus :
 	make BONUS=1 all
+
 clean :
 	rm -f $(OBJS) $(OBJS_BONUS)
+
 fclean :	clean
 	rm -f $(NAME)
+
 re :	fclean all
+
 .PHONY : all bonus clean fclean re
