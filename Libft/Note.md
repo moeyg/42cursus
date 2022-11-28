@@ -129,21 +129,21 @@
 
 <br>
 
-| **Function**     | `toupper`          |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `toupper`                                                                                                                                                               |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Header file**  | #include <ctype.h>                                                                                                                                                      |
+| **Synopsis**     | int toupper(int c);                                                                                                                                                     |
+| **Description**  | The toupper() function converts a lower-case letter to the corresponding upper-case letter. The argument must be representable as an unsigned char or the value of EOF. |
+| **Return value** | If the argument is a lower-case letter, the toupper() function returns the corresponding upper-case letter if there is one.                                             |
 
 <br>
 
-| **Function**     | `tolower`          |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `tolower`                                                                                                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Header file**  | #include <ctype.h>                                                                                                                                                       |
+| **Synopsis**     | int tolower(int c)                                                                                                                                                       |
+| **Description**  | The tolower() function converts an upper-case letter to the corresponding lower-case letter. The argument must be representable as an unsigned char or the value of EOF. |
+| **Return value** | If the argument is an upper-case letter, the tolower() function returns the corresponding lower-case letter if there is one.                                             |
 
 <br>
 
