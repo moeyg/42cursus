@@ -147,21 +147,23 @@
 
 <br>
 
-| **Function**     | `strchr`           |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `strchr`                                                                                                                                                                                                                                                                                                                                                 |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Header file**  | #include <string.h>                                                                                                                                                                                                                                                                                                                                      |
+| **Synopsis**     | char \*strchr(const char \*s, int c);                                                                                                                                                                                                                                                                                                                    |
+| **Description**  | The strchr() function locates the first occurrence of c (converted to a char) in the string pointed to by s. The terminating null character is considered to be part of the string; therefore if c is ‘\0’, the functions locate the terminating ‘\0’. <br> The strrchr() function is identical to strchr(), except it locates the last occurrence of c. |
+| **Return value** | Return a pointer to the located character, or NULL if the character does not appear in the string.                                                                                                                                                                                                                                                       |
+| **Knowledge**    | 첫 번째 인자 `const char *s` 에서 두 번째 인자로 넘어오는 문자(아스키 코드) `int c` 가 있는지 검사하는 함수이다. <br> 해당 문자가 존재한다면 해당 문자가 **처음으로** 존재하는 곳의 포인터를 반환하고 존재하지 않는다면 `NULL` 을 반환한다.                                                                                                              |
 
 <br>
 
-| **Function**     | `strrchr`          |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `strrchr`                                                                                                                                                                                                                                                                                                                                                |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Header file**  | #include <string.h>                                                                                                                                                                                                                                                                                                                                      |
+| **Synopsis**     | char \*strrchr(const char \*s, int c);                                                                                                                                                                                                                                                                                                                   |
+| **Description**  | The strchr() function locates the first occurrence of c (converted to a char) in the string pointed to by s. The terminating null character is considered to be part of the string; therefore if c is ‘\0’, the functions locate the terminating ‘\0’. <br> The strrchr() function is identical to strchr(), except it locates the last occurrence of c. |
+| **Return value** | Return a pointer to the located character, or NULL if the character does not appear in the string.                                                                                                                                                                                                                                                       |
+| **Knowledge**    | `strrchr` 함수는 첫 번째 인자 `const char *s` 에서 가장 마지막으로 나오는 문자(아스키 코드) `int c` 가 있는지 검사하는 함수이다. <br> 해당 문자가 존재한다면 해당 문자가 **마지막으로** 존재하는 곳의 포인터를 반환하고 존재하지 않는다면 `NULL` 을 반환한다.                                                                                            |
 
 <br>
 
