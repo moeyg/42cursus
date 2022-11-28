@@ -167,12 +167,13 @@
 
 <br>
 
-| **Function**     | `memchr`           |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `memchr`                                                                                                                                                                                                                                                                                                                                                             |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Header file**  | #include <string.h>                                                                                                                                                                                                                                                                                                                                                  |
+| **Synopsis**     | void *memchr(const void *s, int c, size_t n)                                                                                                                                                                                                                                                                                                                         |
+| **Description**  | The memchr() function locates the first occurrence of c (converted to an unsigned char) in string s.                                                                                                                                                                                                                                                                 |
+| **Return value** | Returns a pointer to the byte located, or NULL if no such byte exists within n bytes.                                                                                                                                                                                                                                                                                |
+| **Knowledge**    | `memchr()` 은 메모리 영역에서 임의의 문자를 검색하고 있으면 그 위치의 포인터를 반환한다. <br> 마찬가지로 메모리 관련 함수이기 때문에 `unsigned char` 로 캐스팅을 해주어야 한다. <br> **1 byte 단위로 값을 초기화 하기 때문에 int 값을 보낼 경우 예상할 수 없는 값으로 세팅이 될 수 있다.** <br> 마지막 인자로 들어오는 `size_t n` 만큼 비교한 후, 포인터를 반환한다. |
 
 <br>
 
