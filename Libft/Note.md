@@ -186,18 +186,19 @@
 
 <br>
 
-| **Function**     | `strnstr`          |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `strnstr`                                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Header file**  | #include <string.h>                                                                                                                                                                                                                                                                                                                            |
+| **Synopsis**     | char \*strnstr(const char \*haystack, const char \*needle, size_t len)                                                                                                                                                                                                                                                                         |
+| **Description**  | The strnstr() function locates the first occurrence of the null-terminated string needle in the string haystack, where not more than len characters are searched. Characters that appear after a ‘\0’ character are not searched.                                                                                                              |
+| **Return value** | If needle is an empty string, haystack is returned; if needle occurs nowhere in haystack, NULL is returned; otherwise a pointer to the first character of the first occurrence of needle is returned.                                                                                                                                          |
+| **Knowledge**    | `strnstr` 함수는 `const char *haystack` 의 `size_t len` 길이 내에서 `const char *needle` 의 위치를 찾는다. <br> 따라서 `haystack` 안에 `needle` 이 존재할 경우, `needle` 이 처음 발견된 곳의 첫 번째 포인터를 반환한다. <br> `haystack` 안에 `needle` 이 없는 경우 NULL 을 반환하고, <br> `needle` 이 빈 문자열일 경우 `haystack` 을 반환한다. |
 
 <br>
 
-| **Function**     | `atoi`             |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `atoi`                                                                                                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------- |
+| **Header file**  | #include <stdlib.h>                                                                                     |
+| **Synopsis**     | int atoi(const char \*str)                                                                              |
+| **Description**  | The atoi() function converts the initial portion of the string pointed to by str to int representation. |
+| **Return value** | integer                                                                                                 |
