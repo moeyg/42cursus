@@ -177,12 +177,12 @@
 
 <br>
 
-| **Function**     | `memcmp`           |
-| ---------------- | ------------------ |
-| **Header file**  | #include <ctype.h> |
-| **Synopsis**     |                    |
-| **Description**  |                    |
-| **Return value** |                    |
+| **Function**     | `memcmp`                                                                                                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Header file**  | #include <ctype.h>                                                                                                                                                             |
+| **Synopsis**     | int memcmp(const void *s1, const void *s2, size_t n)                                                                                                                           |
+| **Description**  | The memcmp() function compares byte string s1 against byte string s2. Both strings are assumed to be n bytes long.                                                             |
+| **Return value** | The memcmp() function returns zero if the two strings are identical, otherwise returns the difference between the first two differing bytes (treated as unsigned char values). |
 
 <br>
 
