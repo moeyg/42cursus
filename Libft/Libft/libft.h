@@ -22,7 +22,7 @@ char    *ft_strrchr(const char *str, int ascii_num);
 char	*ft_strnstr(const char *str, const char *content, size_t length);
 
 
-int     ft_atoi(const char *str)
+int     ft_atoi(const char *str);
 void    ft_bzero(void *str, size_t size);
 
 void    *ft_memset(void *ptr, int value, size_t length);
