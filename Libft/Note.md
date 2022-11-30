@@ -216,12 +216,13 @@
 
 <br>
 
-| **Function**     | `strdup`                                                                                                                                                                                                                                                                                                                               |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Header file**  | #include <string.h>                                                                                                                                                                                                                                                                                                                    |
-| **Prototype**    | char *strdup(const char *s1)                                                                                                                                                                                                                                                                                                           |
-| **Description**  | The strdup() function allocates sufficient memory for a copy of the string s1, does the copy, and returns a pointer to it. <br> If insufficient memory is available, NULL is returned and errno is set to ENOMEM. <br> The strndup() function copies at most n characters from the string s1 always NUL terminating the copied string. |
-| **Return value** |                                                                                                                                                                                                                                                                                                                                        |
+| **Function**     | `strdup`                                                                                                                                                                                               |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Header file**  | #include <string.h>                                                                                                                                                                                    |
+| **Prototype**    | char *strdup(const char *s1)                                                                                                                                                                           |
+| **Description**  | The strdup() function allocates sufficient memory for a copy of the string s1, does the copy, and returns a pointer to it.                                                                             |
+| **Return value** | If insufficient memory is available, NULL is returned and errno is set to ENOMEM. <br> The strndup() function copies at most n characters from the string s1 always NUL terminating the copied string. |
+| **Knowledge**    | `strdup` 함수는 문자열 `s1` 의 길이를 잰 후 동적 할당을 하고 `s1` 을 복사한 새로운 문자열을 반환하는 함수이다. 마지막에 `free` 에 유의해 사용해야 한다.                                                |
 
 <br>
 
