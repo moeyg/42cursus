@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char *ft_strmapi(char const *str, char (*foo)(unsigned int, char))
+char    *ft_strmapi(char const *str, char (*foo)(unsigned int, char))
 {
     size_t  index;
     size_t  length;
