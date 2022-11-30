@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *str, char const *delete)
             end --;
         if (!(result = (char *)malloc(end - start + 1)))
             return (0);
-        ft_strlcpy(result, &str[start], start - end + 1);
+        ft_strlcpy(result, &str[start], end - start + 1);
     }
     return (result);
 }
