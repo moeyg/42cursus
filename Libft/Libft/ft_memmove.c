@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t length)
+void    *ft_memmove(void *dest, const void *src, size_t length)
 {
     unsigned char   *dest_buffer;
     unsigned char   *src_buffer;
@@ -17,8 +17,10 @@ void *ft_memmove(void *dest, const void *src, size_t length)
     else
     {
         while (length != 0)
+        {
             *(dest_buffer + length) = *(src_buffer + length);
             length --;
+        }
     }
     return (dest);
 }
