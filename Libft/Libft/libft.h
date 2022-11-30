@@ -20,10 +20,9 @@ int     ft_strncmp(const char *str1, const char *str2, size_t length);
 char	*ft_strchr(const char *str, int ascii_num);
 char    *ft_strrchr(const char *str, int ascii_num);
 char	*ft_strnstr(const char *str, const char *content, size_t length);
-
+char    *strdup(const char *str);
 
 int     ft_atoi(const char *str);
-void    ft_bzero(void *str, size_t size);
 
 void    *ft_memset(void *ptr, int value, size_t length);
 void    *ft_memcpy(void *dest, const void *src, size_t length);
@@ -31,5 +30,7 @@ void    *ft_memmove(void *dest, const void *src, size_t length);
 void    *ft_memchr(const void *ptr, int value, size_t length);
 int     ft_memcmp(const void *str1, const void *str2, size_t length);
 
+void    ft_bzero(void *str, size_t size);
+void    *ft_calloc(size_t count, size_t size);
 
 #endif
