@@ -36,5 +36,11 @@ void    *ft_calloc(size_t count, size_t size);
 char    *ft_substr(char const *str, unsigned int start, size_t length);
 char    *ft_strjoin(char const *prefix, char const *suffix);
 char	*ft_strtrim(char const *str, char const *delete);
+char    **ft_split(char const *str, char delimiter);
+
+void    ft_putchar_fd(char character, int file_descriptor);
+void    ft_putstr_fd(char *str, int file_descriptor);
+void    ft_putendl_fd(char *str, int file_descriptor);
+void    ft_putnbr_fd(int integer, int file_descriptor);
 
 #endif
