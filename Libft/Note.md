@@ -305,3 +305,13 @@
 | **Return value**     | -                                                                  |
 | **External functs.** | `write`                                                            |
 | **Description**      | 제공 받은 파일 식별자에 문자 `c` 를 출력한다.                      |
+
+<br>
+
+| **Function name**    | `ft_putstr_fd`                                                       |
+| -------------------- | -------------------------------------------------------------------- |
+| **Prototype**        | void ft_putstr_fd(char \*s, int fd);                                 |
+| **Parameters**       | #1. 출력할 문자열 <br> #2. 값이 쓰여질 파일 식별자 (file descriptor) |
+| **Return value**     | -                                                                    |
+| **External functs.** | `write`                                                              |
+| **Description**      | 제공 받은 파일 식별자에 문자열 `s` 를 출력한다.                      |
