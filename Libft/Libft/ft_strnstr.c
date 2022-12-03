@@ -2,22 +2,23 @@
 
 char	*ft_strnstr(const char *str, const char *content, size_t length)
 {
-    size_t  i;
-    size_t  j;
+    size_t  index_str;
+    size_t  index_content;
 
     if (*content == 0)
         return ((char *)str);
-    i = 0;
-    while (i < length && str[i] != '\0')
+    index_str = 0;
+    while (index_str < length && str[index_str] != '\0')
     {
-        j = 0;
-        while (str[i + j] == content[j] && i + j < length)
+        index_content = 0;
+        while (str[index_str + index_content] == content[index_content] 
+                && index_str + index_content < length)
         {
-            if (content[j] == 0)
-                return ((char *)&str[i]);
-            j ++;
+            if (content[index_content] == '\0')
+                return ((char *)&str[index_str]);
+            index_content ++;
         }
-        i ++;
+        index_str ++;
     }
     return (0);
 }
