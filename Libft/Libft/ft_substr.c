@@ -12,7 +12,7 @@ char    *ft_substr(char const *str, unsigned int start, size_t length)
         return (ft_strdup(""));
     if (!(result = (char *)malloc(sizeof(char) * (length + 1))))
         return (0);
-    ft_memmove(result, str + start, length);
+    ft_memcpy(result, str + start, length);
     result[length] = 0;
     return (result);
 }

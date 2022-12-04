@@ -12,8 +12,8 @@ char    *ft_strjoin(char const *prefix, char const *suffix)
     suffix_length = ft_strlen(suffix);
     if (!(result = (char *)malloc(prefix_length + suffix_length + 1)))
         return (0);
-    ft_memmove(result, prefix, prefix_length);
-    ft_memmove(result + prefix_length, suffix, suffix_length);
+    ft_strlcpy(result, prefix, prefix_length);
+    ft_strlcat(result + prefix_length, suffix, suffix_length);
     result[prefix_length + suffix_length] = '\0';
     return (result);
 }
