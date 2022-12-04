@@ -2,9 +2,9 @@
 
 int ft_atoi(const char *str)
 {
-    size_t      index;
-    int         sign;
-    long long   result;
+    size_t              index;
+    int                 sign;
+    unsigned long long  result;
 
     index = 0;
     sign = 1;
@@ -22,9 +22,9 @@ int ft_atoi(const char *str)
         result = result * 10 + (str[index] - '0');
         index ++;
     }
-    if (result > 2147483648 && sign < 0)
+    if (sign < 0 && result > 9223372036854775808llu)
         return (0);
-    if (result > 2147483647 && sign > 0)
-        return (0);
+    if (sign > 0 && result > 9223372036854775807llu)
+        return (-1);
     return (sign * result);
 }
