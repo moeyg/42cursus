@@ -10,7 +10,8 @@ char    *ft_itoa(int integer)
 
     start = 0;
     end = ft_intlen(integer);
-    if (!(result = (char *)malloc(end + 1)))
+    result = (char *)malloc(end + 1);
+    if (!(result))
         return (0);
     if (integer < 0)
         result[start++] = '-';

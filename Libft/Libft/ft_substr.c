@@ -10,7 +10,8 @@ char    *ft_substr(char const *str, unsigned int start, size_t length)
     str_length = ft_strlen(str);
     if (start >= str_length)
         return (ft_strdup(""));
-    if (!(result = (char *)malloc(sizeof(char) * (length + 1))))
+    result = (char *)malloc(sizeof(char) * (length + 1));
+    if (!(result))
         return (0);
     ft_memcpy(result, str + start, length);
     result[length] = 0;

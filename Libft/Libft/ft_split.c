@@ -13,14 +13,16 @@ char    **ft_split(char const *str, char delimiter)
     if (str == '\0')
         return (0);
     count = ft_word_count(str, delimiter);
-    if (!(result = (char **)ft_calloc(count + 1, sizeof(char *))))
+    result = (char **)ft_calloc(count + 1, sizeof(char *));
+    if (!(result))
         return (0);
     index = 0;
     while (*str != '\0' && index < count)
     {
         if (*str != delimiter)
         {
-            if (!(result[index++] = ft_str_duplicate(&*str, delimiter)))
+            result[index++] = ft_str_duplicate(&*str, delimiter);
+            if (!(result))
                 return (ft_free(result));
             while (*str != '\0' && *str != delimiter)
                 str ++;
@@ -60,7 +62,8 @@ static char     *ft_str_duplicate(const char *src, const char delimiter)
     length = 0;
     while (src[length] != '\0' && src[length] != delimiter)
         length ++;
-    if (!(dest = (char *)ft_calloc(length + 1, sizeof(char))))
+    dest = (char *)ft_calloc(length + 1, sizeof(char));
+    if (!(dest))
         return (0);
     ft_strlcpy(dest, src, length + 1);
     return (dest);

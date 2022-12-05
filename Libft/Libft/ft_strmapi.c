@@ -10,7 +10,8 @@ char    *ft_strmapi(char const *str, char (*foo)(unsigned int, char))
         return (0);
     index = 0;
     length = ft_strlen(str);
-    if (!(result = (char *)malloc(length + 1)))
+    result = (char *)malloc(length + 1);
+    if (!(result))
         return (0);
     while (index < length)
     {

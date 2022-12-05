@@ -14,7 +14,8 @@ char	*ft_strtrim(char const *str, char const *delete)
             start ++;
         while (str[end] != '\0' && ft_strchr(delete, str[end]))
             end --;
-        if (!(result = (char *)malloc(end - start + 1)))
+        result = (char *)malloc(end - start + 1);
+        if (!(result))
             return (0);
         ft_strlcpy(result, &str[start], end - start + 1);
     }
