@@ -4,7 +4,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-// struct
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}   t_list;
+
 int     ft_isalpha(int ascii_num);
 int     ft_isdigit(int ascii_num);
 int     ft_isalnum(int ascii_num);
