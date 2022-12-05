@@ -22,9 +22,9 @@ int ft_atoi(const char *str)
         result = result * 10 + (str[index] - '0');
         index ++;
     }
-    if (sign < 0 && result > 9223372036854775808llu)
+    if (sign < 0 && result > 9223372036854775808ULL)
         return (0);
-    if (sign > 0 && result > 9223372036854775807llu)
+    if (sign > 0 && result > 9223372036854775807ULL)
         return (-1);
     return (sign * result);
 }
