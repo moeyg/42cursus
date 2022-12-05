@@ -338,3 +338,44 @@
 | **Description**      | 제공 받은 파일 식별자에 정수 `n` 을 출력한다.                      |
 
 <br>
+<br>
+
+# Bonus Part
+
+##### _Having functions to manipulate memory and strings is very useful, but you’ll soon discover that having functions to manipulate lists is even more useful._
+
+##### _`make bonus` will add the bonus functions to the `libft.a` library._
+
+##### _You’ll use the following structure to represent the elements of your list. This structure must be added to your `libft.h` file._
+
+```c
+typedef struct s_list
+{
+    void          *content;
+    struct s_list *next;
+}              t_list;
+```
+
+##### _Here is a description of the fields of the t_list struct:_
+
+- ##### _`content` : The data contained in the element. The `void *` allows to store any kind of data._
+
+  `content`: 요소에 포함된 데이터. `void *` 를 통해 어떠한 자료형의 값도 담을 수 있다.
+
+- ##### _`next` : The next element’s address or `NULL` if it’s the last element._
+  `next`: 다음 요소의 주소값. 만약 해당 요소가 마지막 요소라면, `NULL`을 가리킨다.
+
+##### _The following functions will allow you to easily use your lists._
+
+<br>
+
+| **Function name**     | ft_lstnew                                                                                                                                                                                                                                                                                                                                                                                 |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**         | `t_list *ft_lstnew(void *content);`                                                                                                                                                                                                                                                                                                                                                       |
+| \*Turn in files일\*\* | -                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Parameters**        | `#1. 새로운 요소에 들어갈 content`                                                                                                                                                                                                                                                                                                                                                        |
+| **Return value**      | `새로운 요소 (element)`                                                                                                                                                                                                                                                                                                                                                                   |
+| **External functs.**  | `malloc`                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Description**       | _Allocates (with malloc(3)) and returns a new element. The variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL._ <br> `malloc(3) 을 통해 메모리를 할당하고 새로운 요소를 반환합니다. 요소 내의 변수 'content' 는 인자로 받아온 'content' 로 초기화되어야 합니다. 요소 내의 변수 'next'는 NULL로 초기화되어야 합니다.` |
+
+<br>
