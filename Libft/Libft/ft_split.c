@@ -10,7 +10,7 @@ char    **ft_split(char const *str, char delimiter)
     char    *pointer;
     char    **result;
 
-    if (str == '\0')
+    if (*str == NULL)
         return (0);
     result = (char **)malloc(sizeof(char *) * (ft_word_count(str, delimiter) + 1));
     if (!(result))

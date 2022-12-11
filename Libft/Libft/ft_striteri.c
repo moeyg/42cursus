@@ -4,7 +4,7 @@ void    ft_striteri(char *str, void (*foo)(unsigned int, char*))
 {
     size_t  index;
 
-    if (*str == '\0')
+    if (*str == NULL)
         return ;
     index = 0;
     while (str[index] != '\0')

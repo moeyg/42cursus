@@ -5,7 +5,7 @@ void    ft_putendl_fd(char *str, int file_descriptor)
     size_t  index;
 
     index = 0;
-    if (str[index] == '\0')
+    if (str[index] == NULL)
         return ;
     while (str[index] != '\0')
     {

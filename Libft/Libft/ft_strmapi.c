@@ -6,7 +6,7 @@ char    *ft_strmapi(char const *str, char (*foo)(unsigned int, char))
     size_t  length;
     char    *result;
 
-    if (*str == '\0')
+    if (*str == NULL)
         return (0);
     index = 0;
     length = ft_strlen(str);
