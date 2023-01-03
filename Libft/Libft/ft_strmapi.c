@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char    *ft_strmapi(char const *str, char (*foo)(unsigned int, char))
+char    *ft_strmapi(char const *str, char (*func)(unsigned int, char))
 {
     size_t  index;
     size_t  length;
@@ -15,7 +15,7 @@ char    *ft_strmapi(char const *str, char (*foo)(unsigned int, char))
         return (0);
     while (index < length)
     {
-        result[index] = foo(index, str[index]);
+        result[index] = func(index, str[index]);
         index ++;
     }
     result[index] = '\0';

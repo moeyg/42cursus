@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void    ft_striteri(char *str, void (*foo)(unsigned int, char*))
+void    ft_striteri(char *str, void (*func)(unsigned int, char*))
 {
     size_t  index;
 
@@ -9,7 +9,7 @@ void    ft_striteri(char *str, void (*foo)(unsigned int, char*))
     index = 0;
     while (str[index] != '\0')
     {
-        foo(index, &str[index]);
+        func(index, &str[index]);
         index ++;
     }
 }
