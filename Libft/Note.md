@@ -369,13 +369,11 @@ typedef struct s_list
 
 <br>
 
-| **Function name**     | ft_lstnew                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Prototype**         | `t_list *ft_lstnew(void *content);`                                                                                                                                                                                                                                                                                                                                                       |
-| \*Turn in files일\*\* | -                                                                                                                                                                                                                                                                                                                                                                                         |
-| **Parameters**        | `#1. 새로운 요소에 들어갈 content`                                                                                                                                                                                                                                                                                                                                                        |
-| **Return value**      | `새로운 요소 (element)`                                                                                                                                                                                                                                                                                                                                                                   |
-| **External functs.**  | `malloc`                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Description**       | _Allocates (with malloc(3)) and returns a new element. The variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL._ <br> `malloc(3) 을 통해 메모리를 할당하고 새로운 요소를 반환합니다. 요소 내의 변수 'content' 는 인자로 받아온 'content' 로 초기화되어야 합니다. 요소 내의 변수 'next'는 NULL로 초기화되어야 합니다.` |
+## Note
 
-<br>
+### Linked list
+
+- 연결 리스트는 배열과 같은 선형 자료구조로, 노드들이 메모리 상에 연속적으로 저장되어 있지 않고, 포인터로 연결되어 있는 리스트이다.
+- 연결 리스트의 첫 번째 노드를 가리키는 포인터가 있고, 각 노드들은 값을 저장하는 data 변수(content)와 다음 노드의 주소값을 저장하는 next로 구성된다.
+- *list == NULL : 첫 번째 노드를 가리키는 포인터 주소를 의미하는 *list가 NULL 이라는 뜻으로 리스트 내에 노드가 존재하지 않는다는 뜻이다.
+- list == NULL : 리스트 자체가 존재하지 않는다는 뜻이다.
