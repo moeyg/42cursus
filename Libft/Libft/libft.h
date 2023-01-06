@@ -49,5 +49,6 @@ void    ft_putendl_fd(char *str, int file_descriptor);
 void    ft_putnbr_fd(int integer, int file_descriptor);
 
 int 	ft_lstsize(t_list *list);
+t_list  *ft_lstnew(void *content);
 
 #endif
