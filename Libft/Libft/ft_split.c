@@ -10,7 +10,7 @@ char    **ft_split(char const *str, char delimiter)
     char    *pointer;
     char    **result;
 
-    if (*str == NULL)
+    if (*str == '\0')
         return (0);
     result = (char **)malloc(sizeof(char *) * (ft_word_count(str, delimiter) + 1));
     if (!(result))
@@ -29,6 +29,8 @@ char    **ft_split(char const *str, char delimiter)
         }
         str ++;
     }
+    result[index] = 0;
+    return (result);
 }
 
 static size_t   ft_word_count(const char *str, const char delimiter)
@@ -54,12 +56,9 @@ static size_t   ft_word_count(const char *str, const char delimiter)
 
 static char     *ft_get_next_address(const char *str, const char delimiter)
 {
-    size_t  index;
-
-    index = 0;
-    while (str[index] != '\0' && str[index] != delimiter)
-        index ++;
-    return ((char)str[index]);
+    while (*str != '\0' && *str != delimiter)
+        str ++;
+    return ((char *)str);
 }
 
 static char     **ft_free(char **str, size_t size)

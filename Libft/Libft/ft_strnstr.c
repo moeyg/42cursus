@@ -5,7 +5,7 @@ char	*ft_strnstr(const char *str, const char *content, size_t length)
     size_t  index_str;
     size_t  index_content;
 
-    if (*content == NULL)
+    if (*content == '\0')
         return ((char *)str);
     index_str = 0;
     while (index_str < length && str[index_str] != '\0')

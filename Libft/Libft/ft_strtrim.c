@@ -8,7 +8,7 @@ char	*ft_strtrim(char const *str, char const *delete)
 
     start = 0;
     end = ft_strlen(str) - 1;
-    if (*str != NULL && *delete != NULL)
+    if (*str != '\0' && *delete != '\0')
     {
         while (str[start] != '\0' && ft_strchr(delete, str[start]))
             start ++;
