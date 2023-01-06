@@ -7,8 +7,8 @@ void    ft_lstadd_back(t_list **list, t_list *new)
     if (list == NULL || new == NULL)
         return ;
     node = ft_lstlast(*list);
-    if (node)
-        node->next = new;
-    else
+    if (node == NULL)
         *list = new;
+    else
+        node->next = new;
 }
