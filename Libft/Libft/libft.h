@@ -55,5 +55,6 @@ void    ft_lstadd_front(t_list **list, t_list *new);
 void    ft_lstadd_back(t_list **list, t_list *new);
 void    ft_lstdelone(t_list *lst, void (*del)(void *));
 void    ft_lstclear(t_list **list, void (*del)(void *));
+void    ft_lstiter(t_list *list, void (*func)(void *))
 
 #endif
