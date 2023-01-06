@@ -52,5 +52,6 @@ int 	ft_lstsize(t_list *list);
 t_list  *ft_lstnew(void *content);
 t_list  *ft_lstlast(t_list *list);
 void    ft_lstadd_front(t_list **list, t_list *new);
+void    ft_lstadd_back(t_list **list, t_list *new);
 
 #endif
