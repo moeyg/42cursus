@@ -2,7 +2,7 @@
 
 void    ft_lstadd_front(t_list **list, t_list *new)
 {
-    if (new == NULL)
+    if (list == NULL || new == NULL)
         return ;
     new->next = *list;
     *list = new;
