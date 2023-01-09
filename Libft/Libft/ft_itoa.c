@@ -1,46 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/08 12:50:08 by dogpark           #+#    #+#             */
+/*   Updated: 2023/01/09 18:32:20 by moeyg            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static size_t   ft_intlen(int integer);
+static int	get_integer_length(int integer);
 
-char    *ft_itoa(int integer)
+char	*ft_itoa(int integer)
 {
-    size_t  start;
-    size_t  end;
-    char    *result;
+	int		front;
+	int		back;
+	char	*result;
 
-    start = 0;
-    end = ft_intlen(integer);
-    result = (char *)malloc(end + 1);
-    if (!(result))
-        return (0);
-    if (integer < 0)
-        result[start++] = '-';
-    result[end--] = '\0';
-    while (start <= end)
-    {
-        if (integer < 0)
-            result[end--] = -(integer % 10) + '0';
-        if (integer >= 0)
-            result[end--] = integer % 10 + '0';
-        integer /= 10;
-    }
-    return (result);
+	front = 0;
+	back = get_integer_length(integer);
+	result = (char *)malloc(back + 1);
+	if (result == NULL)
+		return (0);
+	if (integer < 0)
+		result[front++] = '-';
+	result[back--] = 0;
+	while (front <= back)
+	{
+		if (integer < 0)
+			result[back--] = -(integer % 10) + '0';
+		else
+			result[back--] = integer % 10 + '0';
+		integer /= 10;
+	}
+	return (result);
 }
 
-static size_t   ft_intlen(int integer)
+static int	get_integer_length(int integer)
 {
-    int length;
+	int	count;
 
-    length = 1;
-    if (integer < 0)
-    {
-        length ++;
-        integer *= -1;
-    }
-    while (integer > 9)
-    {
-        integer /= 10;
-        length ++;
-    }
-    return (length);
+	if (integer < 0)
+		count = 2;
+	else
+		count = 1;
+	while (integer / 10 != 0)
+	{
+		count ++;
+		integer /= 10;
+	}
+	return (count);
 }
