@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/08 12:49:52 by dogpark           #+#    #+#             */
+/*   Updated: 2023/01/08 13:07:19 by dogpark          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_isdigit(int ascii_num)
+int	ft_isdigit(int ascii_num)
 {
-    if ('0' <= ascii_num && ascii_num <= '9')
-        return (1);
-    return (0);
+	if ('0' <= ascii_num && ascii_num <= '9')
+		return (1);
+	return (0);
 }
