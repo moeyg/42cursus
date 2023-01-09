@@ -1,23 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/08 15:22:20 by dogpark           #+#    #+#             */
+/*   Updated: 2023/01/09 19:05:39 by moeyg            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strtrim(char const *str, char const *delete)
 {
-    size_t  start;
-    size_t  end;
-    char    *result;
+	char	*result;
+	size_t	front;
+	size_t	back;
 
-    start = 0;
-    end = ft_strlen(str) - 1;
-    if (*str != '\0' && *delete != '\0')
-    {
-        while (str[start] != '\0' && ft_strchr(delete, str[start]))
-            start ++;
-        while (str[end] != '\0' && ft_strchr(delete, str[end]))
-            end --;
-        result = (char *)malloc(end - start + 1);
-        if (!(result))
-            return (0);
-        ft_strlcpy(result, &str[start], end - start + 1);
-    }
-    return (result);
+	if (str == NULL || delete == NULL)
+		return (0);
+	front = 0;
+	back = ft_strlen(str);
+	while (str[front] && ft_strchr(delete, str[front]))
+		front ++;
+	while (str[back - 1] && ft_strchr(delete, str[back - 1]) && back > front)
+		back --;
+	result = (char *)malloc(sizeof(char) * (back - front + 1));
+	if (result == NULL)
+		return (0);
+	else
+		ft_strlcpy(result, &str[front], back - front + 1);
+	return (result);
 }

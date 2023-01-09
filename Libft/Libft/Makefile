@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/08 13:51:37 by dogpark           #+#    #+#              #
+#    Updated: 2023/01/08 20:01:20 by dogpark          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
@@ -68,6 +80,7 @@ $(NAME) : $(OBJS_F)
 	ar rc $(NAME) $(OBJS_F)
 
 bonus :
+	sleep 1
 	make BONUS=1 all
 
 clean :
