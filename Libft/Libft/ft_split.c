@@ -1,75 +1,85 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/08 15:23:36 by dogpark           #+#    #+#             */
+/*   Updated: 2023/01/09 18:57:42 by moeyg            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static size_t   ft_word_count(const char *str, const char delimiter);
-static char     *ft_get_next_address(const char *str, const char delimiter);
-static char     **ft_free(char **str, size_t size);
+static size_t	get_word_count(const char *s, const char c);
+static char		*get_next_address(const char *s, const char c);
+static char		**free_memory(char **str, size_t size);
 
-char    **ft_split(char const *str, char delimiter)
+char	**ft_split(char const *str, char delimiter)
 {
-    size_t  index;
-    char    *pointer;
-    char    **result;
+	size_t	index;
+	char	**result;
+	char	*pointer;
 
-    if (*str == '\0')
-        return (0);
-    result = (char **)malloc(sizeof(char *) * (ft_word_count(str, delimiter) + 1));
-    if (!(result))
-        return (0);
-    index = 0;
-    while (*str != '\0')
-    {
-        if (*str != delimiter)
-        {
-            pointer = ft_get_next_address(str, delimiter);
-            result[index] = (char *)malloc(pointer - str + 1);
-            if (!(result[index]))
-                return (ft_free(result, index));
-            ft_strlcpy(result[index ++], str, pointer - str + 1);
-            str = pointer - 1;
-        }
-        str ++;
-    }
-    result[index] = 0;
-    return (result);
+	if (str == NULL)
+		return (0);
+	result = (char **)malloc(sizeof(char *) * (get_word_count(str, delimiter) + 1));
+	if (!result)
+		return (0);
+	index = 0;
+	while (*str)
+	{
+		if (*str != delimiter)
+		{
+			pointer = get_next_address(str, delimiter);
+			result[index] = (char *)malloc(pointer - str + 1);
+			if (!result[index])
+				return (free_memory(result, index));
+			ft_strlcpy(result[index++], str, pointer - str + 1);
+			str = pointer - 1;
+		}
+		str ++;
+	}
+	result[index] = 0;
+	return (result);
 }
 
-static size_t   ft_word_count(const char *str, const char delimiter)
+static size_t	get_word_count(const char *str, const char delimiter)
 {
-    size_t  count;
-    size_t  index;
+	size_t	count;
 
-    count = 0;
-    index = 0;
-    while (str[index] != '\0')
-    {
-        if (str[index] != delimiter)
-        {
-            count ++;
-            while (str[index] != '\0' && str[index] != delimiter)
-                index ++;
-        }
-        else
-            index ++;
-    }
-    return (count);
+	count = 0;
+	while (*str)
+	{
+		if (*str != delimiter)
+		{
+			count++;
+			while (*str != '\0' && *str != delimiter)
+				str ++;
+		}
+		else
+			str ++;
+	}
+	return (count);
 }
 
-static char     *ft_get_next_address(const char *str, const char delimiter)
+static char	*get_next_address(const char *str, const char delimiter)
 {
-    while (*str != '\0' && *str != delimiter)
-        str ++;
-    return ((char *)str);
+	while (*str != '\0' && *str != delimiter)
+		str ++;
+	return ((char *)str);
 }
 
-static char     **ft_free(char **str, size_t size)
+static char	**free_memory(char **str, size_t size)
 {
-    while (size > 0)
-    {
-        free(str[size]);
-        str[size] = 0;
-        size --;
-    }
-    free(str);
-    str = 0;
-    return (0);
+	while (size > 0)
+	{
+		free(str[size]);
+		str[size] = 0;
+		size --;
+	}
+	free(str);
+	str = 0;
+	return (0);
 }
