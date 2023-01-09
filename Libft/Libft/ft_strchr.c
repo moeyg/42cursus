@@ -1,16 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/08 15:23:50 by dogpark           #+#    #+#             */
+/*   Updated: 2023/01/09 18:59:58 by moeyg            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *str, int ascii_num)
 {
-    size_t  index;
-
-    index = 0;
-    ascii_num = (char)ascii_num;
-    while (str[index] != '\0')
-    {
-        if (str[index] == ascii_num)
-            return ((char *)&str[index]);
-        index ++;
-    }
-    return (0);
+	while (*str != '\0') 
+	{
+		if (*str == (char)ascii_num)
+			return ((char *)str);
+		str ++;
+	}
+	return (0);
 }
