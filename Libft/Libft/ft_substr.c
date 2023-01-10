@@ -6,7 +6,7 @@
 /*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:56:12 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/09 19:28:04 by moeyg            ###   ########.fr       */
+/*   Updated: 2023/01/09 19:34:06 by moeyg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t length)
 	if (str_length < length)
 		length = str_length;
 	result = (char *)malloc(length + 1);
-	if (!result)
+	if (result == NULL)
 		return (0);
 	ft_memcpy(result, str + start, length);
 	result[length] = 0;

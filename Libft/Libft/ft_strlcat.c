@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 15:24:12 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/08 20:37:01 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/01/09 19:37:31 by moeyg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	index = 0;
 	if (size <= dest_length)
 		return (src_length + size);
-	while (index < size - dest_length - 1 && src[index])
+	while (index < size - dest_length - 1 && src[index] != '\0')
 	{
 		dest[dest_length + index] = src[index];
 		index++;

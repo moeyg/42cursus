@@ -6,13 +6,13 @@
 /*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 15:23:36 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/09 18:57:42 by moeyg            ###   ########.fr       */
+/*   Updated: 2023/01/09 19:44:52 by moeyg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	get_word_count(const char *s, const char c);
+static size_t	word_count(const char *s, const char c);
 static char		*get_next_address(const char *s, const char c);
 static char		**free_memory(char **str, size_t size);
 
@@ -24,11 +24,11 @@ char	**ft_split(char const *str, char delimiter)
 
 	if (str == NULL)
 		return (0);
-	result = (char **)malloc(sizeof(char *) * (get_word_count(str, delimiter) + 1));
-	if (!result)
+	result = (char **)malloc(sizeof(char *) * (word_count(str, delimiter) + 1));
+	if (result == NULL)
 		return (0);
 	index = 0;
-	while (*str)
+	while (*str != '\0')
 	{
 		if (*str != delimiter)
 		{
@@ -45,12 +45,12 @@ char	**ft_split(char const *str, char delimiter)
 	return (result);
 }
 
-static size_t	get_word_count(const char *str, const char delimiter)
+static size_t	word_count(const char *str, const char delimiter)
 {
 	size_t	count;
 
 	count = 0;
-	while (*str)
+	while (*str != '\0')
 	{
 		if (*str != delimiter)
 		{

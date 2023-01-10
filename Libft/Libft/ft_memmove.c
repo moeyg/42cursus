@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 15:23:14 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/08 15:23:16 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/01/10 21:16:46 by moeyg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t length)
 {
-	unsigned char	*dest_buffer;
-	unsigned char	*src_buffer;
+	unsigned char	*destination;
+	unsigned char	*source;
 
 	if (dest == src || length == 0)
 		return (dest);
-	dest_buffer = (unsigned char *)dest;
-	src_buffer = (unsigned char *)src;
+	destination = (unsigned char *)dest;
+	source = (unsigned char *)src;
 	if (dest < src)
-		while (length--)
-			*dest_buffer++ = *src_buffer++;
-	else
-		while (length--)
-			*(dest_buffer + length) = *(src_buffer + length);
+	{
+		while (length-- > 0)
+			*destination++ = *source++;
+	}
+	if (dest >= src)
+	{
+		while (length-- > 0)
+			*(destination + length) = *(source + length);
+	}
 	return (dest);
 }
