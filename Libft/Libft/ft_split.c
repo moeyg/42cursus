@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:46:39 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/13 16:46:40 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/01/13 21:07:39 by moeyg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	**ft_split(char const *str, char delimiter)
 		{
 			pointer = get_next_address(str, delimiter);
 			result[index] = (char *)malloc(pointer - str + 1);
-			if (!result[index])
+			if (result[index] == NULL)
 				return (free_memory(result, index));
 			ft_strlcpy(result[index++], str, pointer - str + 1);
 			str = pointer - 1;
