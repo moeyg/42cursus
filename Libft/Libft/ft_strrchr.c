@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 15:24:49 by dogpark           #+#    #+#             */
 /*   Updated: 2023/01/09 20:01:53 by moeyg            ###   ########.fr       */
