@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
+/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:50:26 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/08 16:32:01 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/01/16 16:32:02 by moeyg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **list, t_list *new)
+void	ft_lstadd_front(t_list **list, t_list *data)
 {
-	if (list == NULL || new == NULL)
+	if (list == NULL || data == NULL)
 		return ;
-	new->next = *list;
-	*list = new;
+	data->next = *list;
+	*list = data;
 }

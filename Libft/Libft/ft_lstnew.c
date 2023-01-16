@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdata.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	*data;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (new == NULL)
+	data = (t_list *)malloc(sizeof(t_list));
+	if (data == NULL)
 		return (0);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	data->content = content;
+	data->next = NULL;
+	return (data);
 }

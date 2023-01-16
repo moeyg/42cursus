@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlength.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,13 +14,13 @@
 
 int	ft_lstsize(t_list *list)
 {
-	int	size;
+	int	length;
 
-	size = 0;
+	length = 0;
 	while (list != NULL)
 	{
-		size ++;
+		length ++;
 		list = list->next;
 	}
-	return (size);
+	return (length);
 }
