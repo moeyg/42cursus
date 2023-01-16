@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+         #
+#    By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/08 13:51:37 by dogpark           #+#    #+#              #
 #    Updated: 2023/01/16 17:31:23 by moeyg            ###   ########.fr        #
