@@ -32,29 +32,12 @@
 
 ##### _You must re-code the following functions. These function do not need any external functions:_
 
-- [ft_isalpha](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isalpha.c)
-- [ft_isdigit](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isdigit.c)
-- [ft_isalnum](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isalnum.c)
-- [ft_isascii](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isascii.c)
-- [ft_isprint](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isprint.c)
-- [ft_toupper](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_toupper.c)
-- [ft_tolower](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_tolower.c)
+- [ft_isalpha](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isalpha.c), [ft_isdigit](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isdigit.c), [ft_isalnum](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isalnum.c), [ft_isascii](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isascii.c), [ft_isprint](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_isprint.c), [ft_toupper](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_toupper.c), [ft_tolower](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_tolower.c)
 
-- [ft_strlen](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strlen.c)
-- [ft_strlcpy](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strlcpy.c)
-- [ft_strlcat](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strlcat.c)
-- [ft_strncmp](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strncmp.c)
-- [ft_strchr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strchr.c)
-- [ft_strnstr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strnstr.c)
-- [ft_strrchr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strrchr.c)
-- [ft_atoi](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_atoi.c)
+- [ft_strlen](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strlen.c), [ft_strlcpy](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strlcpy.c), [ft_strlcat](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strlcat.c), [ft_strncmp](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strncmp.c), [ft_strchr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strchr.c), [ft_strnstr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strnstr.c), [ft_strrchr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strrchr.c), [ft_atoi](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_atoi.c)
 
-- [ft_bzero](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_bzero.c)
-- [ft_memset](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memset.c)
-- [ft_memcpy](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memcpy.c)
-- [ft_memmove](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memmove.c)
-- [ft_memchr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memchr.c)
-- [ft_memcmp](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memcmp.c)
+- [ft_bzero](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_bzero.c), [ft_memset](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memset.c)
+- [ft_memcpy](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memcpy.c), [ft_memmove](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memmove.c), [ft_memchr](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memchr.c), [ft_memcmp](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_memcmp.c)
 
 #### _You must also re-code the following functions, using the function "`malloc`":_
 
