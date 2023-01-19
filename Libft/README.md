@@ -10,13 +10,11 @@
 
 <br>
 
-### 📄 Assignment
+### ✲ Assignment
 
 > 🔗 [Assignment discription](https://dogpark-42cursus.notion.site/Assignment-13c71a5f9c90430da7f8979d8c0f65d5)
 
-<br>
-
-### ❓ Question
+### ✲ Question
 
 > 🔗 [Question](https://dogpark-42cursus.notion.site/Question-0ea8fe9acefc4cd4838048802fb9b79b)
 
@@ -36,8 +34,6 @@
 # ✲ Part 1 - Libc functions
 
 > 🔗 [Libc fuctions](https://dogpark-42cursus.notion.site/Part-1-Libc-function-d2d84bd029ee4c858b20d756172a17d0)
-
-<br>
 
 ##### _In this first part, you must re-code a set of the `libc` functions, as defined in their `man`. Your functions will need to present the same prototype and behaviors as the originals. Your functions’ names must be prefixed by "`ft_`". For instance, `strlen`becomes`ft_strlen`.
 
@@ -69,8 +65,6 @@
 
 > 🔗 [Additional fuctions](https://dogpark-42cursus.notion.site/Part-2-Additional-functions-339ab29941d1406892ee73efd419a74f)
 
-<br>
-
 ##### _In this second part, you must code a set of functions that are either not included in the `libc`, or included in a different form. Some of these functions can be useful to write Part 1’s functions._
 
 <br>
@@ -92,8 +86,6 @@
 # ✲ Bonus Part
 
 > 🔗 [Bonus Part](https://dogpark-42cursus.notion.site/Bonus-Part-1267ef61c78b43fbbd843048ea2cbcad)
-
-<br>
 
 ##### _Having functions to manipulate memory and strings is very useful, but you’ll soon discover that having functions to manipulate lists is even more useful._
 
