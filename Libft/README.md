@@ -1,8 +1,24 @@
 # **Libft**
 
+[![dogpark's 42 Libft Score](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/project/2927858)](https://github.com/JaeSeoKim/badge42)
+
 ##### Your very first own library.
 
 ##### _Summary: This project aims to code a C library regrouping usual functions that you’ll be use for all your next projects. Version: 15_
+
+### 🔗 : _This mark means a connection with a **Notion link**. (Summarized what I have studied.)_
+
+<br>
+
+## 📄 Assignment
+
+> 🔗 [Assignment discription](https://dogpark-42cursus.notion.site/Assignment-13c71a5f9c90430da7f8979d8c0f65d5)
+
+<br>
+
+## ❓ Question
+
+> 🔗 [Question](https://dogpark-42cursus.notion.site/Question-0ea8fe9acefc4cd4838048802fb9b79b)
 
 <br>
 <br>
@@ -17,8 +33,13 @@
 | **Description**     | `Write your own library: a collection of functions that will be a useful tool for your cursus.` |
 
 <br>
+<br>
 
-## Part 1 - Libc functions
+# ✲ Part 1 - Libc functions
+
+> 🔗 [Libc fuctions](https://dogpark-42cursus.notion.site/Part-1-Libc-function-d2d84bd029ee4c858b20d756172a17d0)
+
+<br>
 
 ##### _In this first part, you must re-code a set of the `libc` functions, as defined in their `man`. Your functions will need to present the same prototype and behaviors as the originals. Your functions’ names must be prefixed by "`ft_`". For instance, `strlen`becomes`ft_strlen`.
 
@@ -45,8 +66,13 @@
 - [ft_strdup](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strdup.c)
 
 <br>
+<br>
 
-## Part 2 - Additional functions
+# ✲ Part 2 - Additional functions
+
+> 🔗 [Additional fuctions](https://dogpark-42cursus.notion.site/Part-2-Additional-functions-339ab29941d1406892ee73efd419a74f)
+
+<br>
 
 ##### _In this second part, you must code a set of functions that are either not included in the `libc`, or included in a different form. Some of these functions can be useful to write Part 1’s functions._
 
@@ -65,8 +91,13 @@
 - [ft_putnbr_fd](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_putnbr_fd.c)
 
 <br>
+<br>
 
-# Bonus part
+# ✲ Bonus Part
+
+> 🔗 [Bonus Part](https://dogpark-42cursus.notion.site/Bonus-Part-1267ef61c78b43fbbd843048ea2cbcad)
+
+<br>
 
 ##### _Having functions to manipulate memory and strings is very useful, but you’ll soon discover that having functions to manipulate lists is even more useful._
 
