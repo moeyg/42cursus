@@ -10,17 +10,16 @@
 
 <br>
 
-## 📄 Assignment
+### 📄 Assignment
 
 > 🔗 [Assignment discription](https://dogpark-42cursus.notion.site/Assignment-13c71a5f9c90430da7f8979d8c0f65d5)
 
 <br>
 
-## ❓ Question
+### ❓ Question
 
 > 🔗 [Question](https://dogpark-42cursus.notion.site/Question-0ea8fe9acefc4cd4838048802fb9b79b)
 
-<br>
 <br>
 
 # Mandatory part
@@ -32,7 +31,6 @@
 | **External functs** | `Detailed below`                                                                                |
 | **Description**     | `Write your own library: a collection of functions that will be a useful tool for your cursus.` |
 
-<br>
 <br>
 
 # ✲ Part 1 - Libc functions
@@ -66,7 +64,6 @@
 - [ft_strdup](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_strdup.c)
 
 <br>
-<br>
 
 # ✲ Part 2 - Additional functions
 
@@ -90,7 +87,6 @@
 - [ft_putendl_fd](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_putendl_fd.c)
 - [ft_putnbr_fd](https://github.com/moeyg/42cursus/blob/main/Libft/Libft/ft_putnbr_fd.c)
 
-<br>
 <br>
 
 # ✲ Bonus Part
