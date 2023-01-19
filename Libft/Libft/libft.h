@@ -6,14 +6,14 @@
 /*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:56:45 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/16 17:14:05 by moeyg            ###   ########.fr       */
+/*   Updated: 2023/01/16 17:58:03 by moeyg            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/* Standard header file */
+/* Standard library header file */
 # include <unistd.h>
 # include <stdlib.h>
 
