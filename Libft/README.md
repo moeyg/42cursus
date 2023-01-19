@@ -6,7 +6,7 @@
 
 ##### _Summary: This project aims to code a C library regrouping usual functions that you’ll be use for all your next projects. Version: 15_
 
-### 🔗 : _This mark means a connection with a **Notion link**. (Summarized what I have studied.)_
+#### 🔗 : <i style="color:red">This mark means a connection with a **Notion link**. (Summarized what I have studied.)</i>
 
 <br>
 
