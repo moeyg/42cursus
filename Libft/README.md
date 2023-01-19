@@ -6,15 +6,15 @@
 
 ##### _Summary: This project aims to code a C library regrouping usual functions that you’ll be use for all your next projects. Version: 15_
 
-#### 🔗 : <i style="color:red">This mark means a connection with a **Notion link**. (Summarized what I have studied.)</i>
+#### 🔗 : _This mark means a connection with a **Notion link**._
 
 <br>
 
-### ✲ Assignment
+### 📄 Assignment
 
 > 🔗 [Assignment discription](https://dogpark-42cursus.notion.site/Assignment-13c71a5f9c90430da7f8979d8c0f65d5)
 
-### ✲ Question
+### ❓ Question
 
 > 🔗 [Question](https://dogpark-42cursus.notion.site/Question-0ea8fe9acefc4cd4838048802fb9b79b)
 
