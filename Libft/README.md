@@ -1,6 +1,7 @@
 # **Libft**
 
 [![dogpark's 42 Libft Score](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/project/2927858)](https://github.com/JaeSeoKim/badge42)
+> 🔗 [Libft Notion](https://dogpark-42cursus.notion.site/Libft-c68e47337f4141fea098e7f22e8de603)
 
 ##### Your very first own library.
 
