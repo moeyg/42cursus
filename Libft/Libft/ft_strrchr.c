@@ -20,10 +20,14 @@ char	*ft_strrchr(const char *str, int ascii_num)
 	while (*str != '\0')
 	{
 		if (*str == (char)ascii_num)
+		{
 			result = (char *)str;
+		}
 		str ++;
 	}
 	if ((char)ascii_num == 0)
+	{
 		return ((char *)str);
+	}
 	return (result);
 }
