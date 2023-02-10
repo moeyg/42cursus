@@ -24,7 +24,9 @@ int	ft_memcmp(const void *str1, const void *str2, size_t length)
 	while (index < length)
 	{
 		if (string1[index] != string2[index])
+		{
 			return (string1[index] - string2[index]);
+		}
 		index ++;
 	}
 	return (0);
