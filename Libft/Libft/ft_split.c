@@ -23,10 +23,14 @@ char	**ft_split(char const *str, char delimiter)
 	char	*pointer;
 
 	if (str == NULL)
+	{
 		return (0);
+	}
 	result = (char **)malloc(sizeof(char *) * (word_count(str, delimiter) + 1));
 	if (result == NULL)
+	{
 		return (0);
+	}
 	index = 0;
 	while (*str != '\0')
 	{
@@ -35,7 +39,9 @@ char	**ft_split(char const *str, char delimiter)
 			pointer = get_next_address(str, delimiter);
 			result[index] = (char *)malloc(pointer - str + 1);
 			if (result[index] == NULL)
+			{
 				return (free_memory(result, index));
+			}
 			ft_strlcpy(result[index++], str, pointer - str + 1);
 			str = pointer - 1;
 		}
@@ -56,7 +62,9 @@ static size_t	word_count(const char *str, const char delimiter)
 		{
 			count++;
 			while (*str != '\0' && *str != delimiter)
+			{
 				str ++;
+			}
 		}
 		else
 			str ++;
@@ -67,7 +75,9 @@ static size_t	word_count(const char *str, const char delimiter)
 static char	*get_next_address(const char *str, const char delimiter)
 {
 	while (*str != '\0' && *str != delimiter)
+	{
 		str ++;
+	}
 	return ((char *)str);
 }
 
