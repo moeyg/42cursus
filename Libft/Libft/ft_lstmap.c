@@ -19,7 +19,9 @@ t_list	*ft_lstmap(t_list *list, void *(*func)(void *), void (*del)(void *))
 	void	*data;
 
 	if (list == NULL || func == NULL || del == NULL)
+	{
 		return (NULL);
+	}
 	head = NULL;
 	while (list != NULL)
 	{
