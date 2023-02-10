@@ -17,10 +17,16 @@ void	ft_lstadd_back(t_list **list, t_list *data)
 	t_list	*node;
 
 	if (list == NULL || data == NULL)
+	{
 		return ;
+	}
 	node = ft_lstlast(*list);
 	if (node == NULL)
+	{
 		*list = data;
+	}
 	else
+	{
 		node->next = data;
+	}
 }
