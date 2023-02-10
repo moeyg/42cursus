@@ -17,10 +17,14 @@ char	*ft_strchr(const char *str, int ascii_num)
 	while (*str != '\0')
 	{
 		if (*str == (char)ascii_num)
+		{
 			return ((char *)str);
+		}
 		str ++;
 	}
 	if (*str == (char)ascii_num)
+	{
 		return ((char *)str);
+	}
 	return (0);
 }
