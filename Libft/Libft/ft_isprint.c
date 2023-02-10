@@ -15,6 +15,8 @@
 int	ft_isprint(int ascii_num)
 {
 	if (32 <= ascii_num && ascii_num <= 126)
+	{
 		return (1);
+	}
 	return (0);
 }
