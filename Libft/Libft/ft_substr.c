@@ -17,16 +17,24 @@ char	*ft_substr(char const *str, unsigned int start, size_t length)
 	char	*result;
 	size_t	str_length;
 
-	if (!str)
+	if (str == NULL)
+	{
 		return (0);
+	}
 	str_length = ft_strlen(str);
 	if (str_length <= start)
+	{
 		return (ft_strdup(""));
+	}
 	if (str_length < length)
+	{
 		length = str_length;
+	}
 	result = (char *)malloc(length + 1);
 	if (result == NULL)
+	{
 		return (0);
+	}
 	ft_memcpy(result, str + start, length);
 	result[length] = 0;
 	return (result);
