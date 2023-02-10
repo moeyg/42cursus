@@ -18,18 +18,24 @@ void	*ft_memmove(void *dest, const void *src, size_t length)
 	unsigned char	*source;
 
 	if (dest == src || length == 0)
+	{
 		return (dest);
+	}
 	destination = (unsigned char *)dest;
 	source = (unsigned char *)src;
 	if (dest < src)
 	{
 		while (length-- > 0)
+		{
 			*destination++ = *source++;
+		}
 	}
 	if (dest >= src)
 	{
 		while (length-- > 0)
+		{
 			*(destination + length) = *(source + length);
+		}
 	}
 	return (dest);
 }
