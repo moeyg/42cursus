@@ -24,7 +24,9 @@ int	ft_strncmp(const char *str1, const char *str2, size_t length)
 		string1 = str1[index];
 		string2 = str2[index];
 		if (string1 != string2)
+		{
 			return (string1 - string2);
+		}
 		index ++;
 	}
 	return (0);
