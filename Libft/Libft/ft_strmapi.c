@@ -19,12 +19,16 @@ char	*ft_strmapi(char const *str, char (*func)(unsigned int, char))
 	char	*result;
 
 	if (str == NULL)
+	{
 		return (0);
+	}
 	index = 0;
 	length = ft_strlen(str);
 	result = (char *)malloc(length + 1);
 	if (result == NULL)
+	{
 		return (0);
+	}
 	while (index < length)
 	{
 		result[index] = func(index, str[index]);
