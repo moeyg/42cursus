@@ -19,10 +19,14 @@ void	*ft_calloc(size_t count, size_t size)
 
 	memory_size = count * size;
 	if (memory_size > 4294967295)
+	{
 		return (0);
+	}
 	result = malloc(memory_size);
 	if (result == NULL)
+	{
 		return (0);
+	}
 	ft_bzero(result, memory_size);
 	return (result);
 }
