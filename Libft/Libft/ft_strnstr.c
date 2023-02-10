@@ -18,7 +18,9 @@ char	*ft_strnstr(const char *str, const char *content, size_t length)
 	size_t	content_index;
 
 	if (*content == '\0')
+	{
 		return ((char *)str);
+	}
 	str_index = 0;
 	while (str_index < length && str[str_index] != '\0')
 	{
@@ -28,7 +30,9 @@ char	*ft_strnstr(const char *str, const char *content, size_t length)
 		{
 			content_index ++;
 			if (content[content_index] == '\0')
+			{
 				return ((char *)&str[str_index]);
+			}
 		}
 		str_index ++;
 	}
