@@ -14,20 +14,16 @@
 
 char	*ft_strrchr(const char *str, int ascii_num)
 {
-	char	*result;
+	size_t	index;
 
-	result = 0;
-	while (*str != '\0')
+	index = ft_strlen(str);
+	while (index > 0 && str[index] != (char)ascii_num)
 	{
-		if (*str == (char)ascii_num)
-		{
-			result = (char *)str;
-		}
-		str ++;
+		index --;
 	}
-	if ((char)ascii_num == 0)
+	if (str[index] == (char)ascii_num)
 	{
-		return ((char *)str);
+		return ((char *)(str + index));
 	}
-	return (result);
+	return (0);
 }
