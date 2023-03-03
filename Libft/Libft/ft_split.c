@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-static size_t	word_count(const char *s, const char c);
-static char		*get_next_address(const char *s, const char c);
+static size_t	word_count(const char *str, const char delimiter);
+static char		*get_next_address(const char *str, const char delimiter);
 static char		**free_memory(char **str, size_t size);
 
 char	**ft_split(char const *str, char delimiter)
