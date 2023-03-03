@@ -31,7 +31,7 @@ char	*ft_itoa(int integer)
 	{
 		result[front++] = '-';
 	}
-	result[back--] = 0;
+	result[back--] = '\0';
 	while (front <= back)
 	{
 		if (integer < 0)
