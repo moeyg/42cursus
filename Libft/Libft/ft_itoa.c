@@ -30,18 +30,12 @@ char	*ft_itoa(int integer)
 	if (integer < 0)
 	{
 		result[front++] = '-';
+		integer *= -1;
 	}
 	result[back--] = '\0';
 	while (front <= back)
 	{
-		if (integer < 0)
-		{
-			result[back--] = -(integer % 10) + '0';
-		}
-		else
-		{
-			result[back--] = integer % 10 + '0';
-		}
+		result[back--] = integer % 10 + '0';
 		integer /= 10;
 	}
 	return (result);
