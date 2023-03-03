@@ -43,20 +43,20 @@ char	*ft_itoa(int integer)
 
 static int	get_integer_length(int integer)
 {
-	int	count;
+	int	length;
 
 	if (integer < 0)
 	{
-		count = 2;
+		length = 2;
 	}
 	else
 	{
-		count = 1;
+		length = 1;
 	}
 	while (integer / 10 != 0)
 	{
-		count ++;
+		length ++;
 		integer /= 10;
 	}
-	return (count);
+	return (length);
 }
