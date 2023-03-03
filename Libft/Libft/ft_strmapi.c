@@ -32,8 +32,8 @@ char	*ft_strmapi(char const *str, char (*func)(unsigned int, char))
 	while (index < length)
 	{
 		result[index] = func(index, str[index]);
-		index++;
+		index ++;
 	}
-	result[index] = 0;
+	result[index] = '\0';
 	return (result);
 }
