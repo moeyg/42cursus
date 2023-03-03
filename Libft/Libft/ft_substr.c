@@ -36,6 +36,6 @@ char	*ft_substr(char const *str, unsigned int start, size_t length)
 		return (0);
 	}
 	ft_memcpy(result, str + start, length);
-	result[length] = 0;
+	result[length] = '\0';
 	return (result);
 }
