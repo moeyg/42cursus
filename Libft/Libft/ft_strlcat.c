@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	index = 0;
 	if (size <= dest_length)
 		return (src_length + size);
-	while (index < size - dest_length - 1 && src[index] != '\0')
+	while (dest_length + index < size - 1 && src[index] != '\0')
 	{
 		dest[dest_length + index] = src[index];
 		index++;
