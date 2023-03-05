@@ -12,29 +12,29 @@
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *list, void *(*func)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *node, void *(*func)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*head;
-	void	*data;
+	t_list	*new_node;
+	t_list	*head_node;
+	void	*content;
 
-	if (list == NULL || func == NULL || del == NULL)
+	if (node == NULL || func == NULL || del == NULL)
 	{
 		return (NULL);
 	}
-	head = NULL;
-	while (list != NULL)
+	head_node = NULL;
+	while (node != NULL)
 	{
-		data = func(list->content);
-		new_list = ft_lstnew(data);
-		if (new_list == NULL)
+		content = func(node->content);
+		new_node = ft_lstnew(content);
+		if (new_node == NULL)
 		{
-			del(data);
-			ft_lstclear(&head, del);
+			del(content);
+			ft_lstclear(&head_node, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&head, new_list);
-		list = list->next;
+		ft_lstadd_back(&head_node, new_node);
+		node = node->next;
 	}
-	return (head);
+	return (head_node);
 }
