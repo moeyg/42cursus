@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+         #
+#    By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/08 13:51:37 by dogpark           #+#    #+#              #
-#    Updated: 2023/01/16 17:31:23 by dogpark          ###   ########.fr        #
+#    Updated: 2023/03/09 17:11:09 by moeyg            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,19 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Compile command line
-COMPILE = $(CC) $(CFLAGS) -c $< -o $@
+COMPILE = $(CC) $(CFLAGS) -c $< -o $@ -I ${INCLUDE_DIRECTORY}
 
 # Library name
 NAME = libft.a
 
-# Header file
-HEADER  = ./libft.h
+# Header file directory
+INCLUDE_DIRECTORY  = include
+
+# Source directory
+SRCS_DIRECTORY = srcs
 
 # Source files
-SOURCE = 	\
+SRCS =  $(addprefix ${SRCS_DIRECTORY}/,	\
 		./ft_isalpha.c \
 		./ft_isdigit.c \
 		./ft_isalnum.c \
@@ -60,9 +63,9 @@ SOURCE = 	\
 		./ft_putchar_fd.c \
 		./ft_putstr_fd.c \
 		./ft_putendl_fd.c \
-		./ft_putnbr_fd.c
+		./ft_putnbr_fd.c)
 
-SOURCE_BONUS =	\
+SRCS_BONUS = $(addprefix ${SRCS_DIRECTORY}/, \
 				./ft_lstnew.c \
 				./ft_lstlast.c \
 				./ft_lstsize.c \
@@ -71,10 +74,10 @@ SOURCE_BONUS =	\
 				./ft_lstdelone.c \
 				./ft_lstclear.c \
 				./ft_lstiter.c \
-				./ft_lstmap.c
+				./ft_lstmap.c)
 
-OBJECTS = $(SOURCE:.c=.o)
-OBJECTS_BONUS = $(SOURCE_BONUS:.c=.o)
+OBJECTS = $(SRCS:.c=.o)
+OBJECTS_BONUS = $(SRCS_BONUS:.c=.o)
 
 ifdef BONUS
 	OBJECTS_FINAL_VERSION = $(OBJECTS) $(OBJECTS_BONUS)
@@ -84,7 +87,7 @@ endif
 
 all : $(NAME)
 
-%.o: %.c $(HEADER)
+%.o: %.c ${INCLUDE_DIRECTORY}
 	$(COMPILE)
 
 $(NAME) : $(OBJECTS_FINAL_VERSION)
@@ -97,7 +100,7 @@ bonus :
 clean :
 	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
-fclean :	clean
+fclean : clean
 	rm -f $(NAME)
 
 re :	fclean all
