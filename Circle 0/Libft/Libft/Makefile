@@ -11,13 +11,13 @@
 # **************************************************************************** #
 
 # Compiler
-CC = cc
+CC = gcc
 
 # Compiler flag
-COMPILE_FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 # Compile command line
-COMPILE = $(CC) $(COMPILE_FLAGS) -c $< -o $@
+COMPILE = $(CC) $(CFLAGS) -c $< -o $@
 
 # Library name
 NAME = libft.a
@@ -84,11 +84,12 @@ endif
 
 all : $(NAME)
 
-%.o: %.c : $(HEADER)
+%.o: %.c $(HEADER)
 	$(COMPILE)
 
 $(NAME) : $(OBJECTS_FINAL_VERSION)
 	ar rc $(NAME) $(OBJECTS_FINAL_VERSION)
+	ranlib $(NAME)
 
 bonus :
 	make BONUS=1 all
@@ -97,7 +98,7 @@ clean :
 	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean :	clean
-	rm -f $(OBJECTS) $(OBJECTS_BONUS) $(NAME)
+	rm -f $(NAME)
 
 re :	fclean all
 
