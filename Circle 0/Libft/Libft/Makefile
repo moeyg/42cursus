@@ -10,11 +10,23 @@
 #                                                                              #
 # **************************************************************************** #
 
+# Compiler
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+
+# Compiler flag
+COMPILE_FLAGS = -Wall -Wextra -Werror
+
+# Compile command line
+COMPILE = $(CC) $(COMPILE_FLAGS) -c $< -o $@
+
+# Library name
 NAME = libft.a
+
+# Header file
 HEADER  = ./libft.h
-SRCS = 	\
+
+# Source files
+SOURCE = 	\
 		./ft_isalpha.c \
 		./ft_isdigit.c \
 		./ft_isalnum.c \
@@ -50,10 +62,7 @@ SRCS = 	\
 		./ft_putendl_fd.c \
 		./ft_putnbr_fd.c
 
-
-OBJS = $(SRCS:.c=.o)
-
-SRCS_BONUS =	\
+SOURCE_BONUS =	\
 				./ft_lstnew.c \
 				./ft_lstlast.c \
 				./ft_lstsize.c \
@@ -64,30 +73,31 @@ SRCS_BONUS =	\
 				./ft_lstiter.c \
 				./ft_lstmap.c
 
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+OBJECTS = $(SOURCE:.c=.o)
+OBJECTS_BONUS = $(SOURCE_BONUS:.c=.o)
 
 ifdef BONUS
-	OBJS_F = $(OBJS) $(OBJS_BONUS)
+	OBJECTS_FINAL_VERSION = $(OBJECTS) $(OBJECTS_BONUS)
 else
-	OBJS_F = $(OBJS)
+	OBJECTS_FINAL_VERSION = $(OBJECTS)
 endif
 
 all : $(NAME)
 
-.c.o : $(HEADER)
-	$(CC) $(CFLAG) -c $< -o $@
+%.o: %.c : $(HEADER)
+	$(COMPILE)
 
-$(NAME) : $(OBJS_F)
-	ar rc $(NAME) $(OBJS_F)
+$(NAME) : $(OBJECTS_FINAL_VERSION)
+	ar rc $(NAME) $(OBJECTS_FINAL_VERSION)
 
 bonus :
 	make BONUS=1 all
 
 clean :
-	rm -f $(OBJS) $(OBJS_BONUS)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean :	clean
-	rm -f $(NAME)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS) $(NAME)
 
 re :	fclean all
 
