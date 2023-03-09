@@ -17,13 +17,13 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 # Compile command line
-COMPILE = $(CC) $(CFLAGS) -c $< -o $@ -I ${INCLUDE_DIRECTORY}
+COMPILE = $(CC) $(CFLAGS) -c $< -o $@ -I ${INCLUDES_DIRECTORY}
 
 # Library name
 NAME = libft.a
 
 # Header file directory
-INCLUDE_DIRECTORY  = include
+INCLUDES_DIRECTORY  = includes
 
 # Source directory
 SRCS_DIRECTORY = srcs
@@ -87,7 +87,7 @@ endif
 
 all : $(NAME)
 
-%.o: %.c ${INCLUDE_DIRECTORY}
+%.o: %.c ${INCLUDES_DIRECTORY}
 	$(COMPILE)
 
 $(NAME) : $(OBJECTS_FINAL_VERSION)
