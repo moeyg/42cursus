@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **head_node, t_list *new_node)
 {
 	t_list	*tail_node;
 
-	if (lhead_node == NULL || new_node == NULL)
+	if (*head_node == NULL || new_node == NULL)
 	{
 		return ;
 	}
