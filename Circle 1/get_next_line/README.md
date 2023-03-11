@@ -58,13 +58,11 @@
 - ##### _In the header file `get_next_line.h` you must have at least the prototype of the function `get_next_line`._
 
 <br>
-<br>
 
 > 💡 <br>
 >
 > ##### _Does your function still work if the BUFFER_SIZE value is 9999? And if the BUFFER_SIZE value is 1? And 10000000? Do you know why?_
 
-<br>
 <br>
 
 > 💡 <br>
@@ -72,13 +70,11 @@
 > ##### _You should try to read as little as possible each time get_next_line is called. If you encounter a newline, you have to return the current line. Don’t read the whole file and then process each line._
 
 <br>
-<br>
 
 > 💡 <br>
 >
 > ##### _Don’t turn in your project without testing. There are many tests to run, cover your bases. Try to read from a file, from a redirection, from standard input. How does your program behave when you send a newline to the standard output? And CTRL-D?_
 
-<br>
 <br>
 
 - ##### _lseek is not an allowed function. File reading must be done only once._
@@ -92,7 +88,6 @@
 - ##### _Important: The returned line should include the ’\n’, except if you have reached the end of file and there is no ’\n’.._
 
 <br>
-<br>
 
 > ℹ️ <br>
 >
@@ -100,7 +95,6 @@
 >
 > <br> https://en.wikipedia.org/wiki/Static_variable
 
-<br>
 <br>
 
 # ✲ Bonus part
