@@ -57,6 +57,8 @@
 
 - ##### _In the header file `get_next_line.h` you must have at least the prototype of the function `get_next_line`._
 
+<br>
+
 > 💡 <br>
 >
 > ##### _Does your function still work if the BUFFER_SIZE value is 9999? And if the BUFFER_SIZE value is 1? And 10000000? Do you know why?_
@@ -72,6 +74,8 @@
 > 💡 <br>
 >
 > ##### _Don’t turn in your project without testing. There are many tests to run, cover your bases. Try to read from a file, from a redirection, from standard input. How does your program behave when you send a newline to the standard output? And CTRL-D?_
+
+<br>
 
 - ##### _lseek is not an allowed function. File reading must be done only once._
 
