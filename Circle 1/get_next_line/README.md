@@ -22,7 +22,7 @@
 
 <br>
 
-# ✲ Mandatory part - Get_next_line
+# ✲ Mandatory part
 
 > 🔗 [Get Next Line](https://dogpark-42cursus.notion.site/Mandatory-Part-Get-Next-Line-c6b1844ab08a4ee3a8564c72c8db9f20)
 
