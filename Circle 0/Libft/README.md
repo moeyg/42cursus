@@ -16,9 +16,9 @@
 
 > 🔗 [Assignment discription](https://dogpark-42cursus.notion.site/Assignment-13c71a5f9c90430da7f8979d8c0f65d5)
 
-### ❓ Question
+### 📌 Reference
 
-> 🔗 [Question](https://dogpark-42cursus.notion.site/Question-0ea8fe9acefc4cd4838048802fb9b79b)
+> 🔗 [Reference](https://dogpark-42cursus.notion.site/Reference-0ea8fe9acefc4cd4838048802fb9b79b)
 
 <br>
 
