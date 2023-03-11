@@ -61,9 +61,13 @@
 >
 > ##### _Does your function still work if the BUFFER_SIZE value is 9999? And if the BUFFER_SIZE value is 1? And 10000000? Do you know why?_
 
+<br>
+
 > 💡 <br>
 >
 > ##### _You should try to read as little as possible each time get_next_line is called. If you encounter a newline, you have to return the current line. Don’t read the whole file and then process each line._
+
+<br>
 
 > 💡 <br>
 >
@@ -79,11 +83,15 @@
 
 - ##### _Important: The returned line should include the ’\n’, except if you have reached the end of file and there is no ’\n’.._
 
+<br>
+
 > ℹ️ <br>
 >
 > ##### _A good start would be to know what a static variable is:_
 >
 > <br> https://en.wikipedia.org/wiki/Static_variable
+
+<br>
 
 # ✲ Bonus part
 
