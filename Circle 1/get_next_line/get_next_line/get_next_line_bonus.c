@@ -7,8 +7,8 @@ static char	*ft_strchr(const char *str, int ascii_num);
 
 char	*get_next_line(int fd)
 {
-	char		*next_line;
 	static char	*backup[OPEN_MAX];
+	char		*next_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 	{
