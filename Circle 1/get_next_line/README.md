@@ -1,8 +1,8 @@
-# **Get Next Line**
+# **get_next_line**
 
 [![dogpark's 42 get_next_line Score](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/project/3030835)](https://github.com/JaeSeoKim/badge42)
 
-> 🔗 [Get Next Line Notion](https://dogpark-42cursus.notion.site/Get-Next-Line-1b3a739678164fad83079944463c942b)
+> 🔗 [get_next_line Notion](https://dogpark-42cursus.notion.site/Get-Next-Line-1b3a739678164fad83079944463c942b)
 
 ##### Reading a line on a fd is way too tedious
 
