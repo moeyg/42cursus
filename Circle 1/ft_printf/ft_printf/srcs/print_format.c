@@ -33,21 +33,21 @@ void    print_int(int integer, int *count)
 	{
 		write(1, "-2147483648", 11);
 		*count += 11;
-        return ;
+        	return ;
 	}
-    if (integer < 0)
-    {
-        write(1, "-", 1);
-        *count += 1;
-        integer = -integer;
-    }
-    if (integer > 9)
-    {
-        print_int(integer / 10, count);
-    }
-    num = (integer % 10) + '0';
-    write(1, &num, 1);
-    *count += 1;
+	if (integer < 0)
+	{
+        	write(1, "-", 1);
+        	*count += 1;
+        	integer = -integer;
+	}
+	if (integer > 9)
+	{
+        	print_int(integer / 10, count);
+	}
+	num = (integer % 10) + '0';
+	write(1, &num, 1);
+	*count += 1;
 }
 
 void    print_unsigned_int(unsigned int integer, int *count)
