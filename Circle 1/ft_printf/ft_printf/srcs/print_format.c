@@ -33,17 +33,17 @@ void    print_int(int integer, int *count)
 	{
 		write(1, "-2147483648", 11);
 		*count += 11;
-        	return ;
+        return ;
 	}
 	if (integer < 0)
 	{
-        	write(1, "-", 1);
-        	*count += 1;
-        	integer = -integer;
+        write(1, "-", 1);
+        *count += 1;
+        integer = -integer;
 	}
 	if (integer > 9)
 	{
-        	print_int(integer / 10, count);
+        print_int(integer / 10, count);
 	}
 	num = (integer % 10) + '0';
 	write(1, &num, 1);
