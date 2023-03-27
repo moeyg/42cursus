@@ -9,7 +9,7 @@ int	ft_printf(const char *format, ...)
 
 	va_start(ap, format);
 	count = 0;
-	while (*format)
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
