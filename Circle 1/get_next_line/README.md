@@ -24,20 +24,19 @@
 
 # ✲ Mandatory part
 
-> 🔗 [Get Next Line](https://dogpark-42cursus.notion.site/Mandatory-Part-Get-Next-Line-c6b1844ab08a4ee3a8564c72c8db9f20)
+> 🔗 [get_next_line.c](https://dogpark-42cursus.notion.site/Mandatory-Part-Get-Next-Line-c6b1844ab08a4ee3a8564c72c8db9f20)
+> 🔗 [get_next_line_util.c](https://dogpark-42cursus.notion.site/get_next_line_util-c-6268069624124eb5af1910ddc2a29fa3)
 
 <br>
 
-| **Function name**            | get_next_line                                                                     |
-| ---------------------------- | --------------------------------------------------------------------------------- |
-| **Prototype**                | char \*get_next_line(int fd);                                                     |
-| **Turn in files**            | get_next_line.c, get_next_line_utils.c, get_next_line.h                           |
-| **Parameters**               | fd: The file descriptor to read from                                              |
-| **Return value**             | Read line: correct behavior <br> NULL: there is nothing else to read, or an error |
-| occurred                     |
-| **사용가능한 <br>외부 함수** | `read, malloc, free`                                                              |
-| **설명**                     | Write a function that returns a line read from a                                  |
-| file descriptor              |
+| **Function name**   | get_next_line                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------ |
+| **Prototype**       | char \*get_next_line(int fd);                                                              |
+| **Turn in files**   | get_next_line.c, get_next_line_utils.c, get_next_line.h                                    |
+| **Parameters**      | fd: The file descriptor to read from                                                       |
+| **Return value**    | Read line: correct behavior <br> NULL: there is nothing else to read, or an error occurred |
+| **External functs** | `read, malloc, free`                                                                       |
+| **Description**     | Write a function that returns a line read from a file descriptor                           |
 
 <br>
 
