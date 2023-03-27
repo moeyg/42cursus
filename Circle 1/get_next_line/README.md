@@ -25,6 +25,7 @@
 # ✲ Mandatory part
 
 > 🔗 [get_next_line.c](https://dogpark-42cursus.notion.site/Mandatory-Part-Get-Next-Line-c6b1844ab08a4ee3a8564c72c8db9f20)
+> <br>
 > 🔗 [get_next_line_util.c](https://dogpark-42cursus.notion.site/get_next_line_util-c-6268069624124eb5af1910ddc2a29fa3)
 
 <br>
