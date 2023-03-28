@@ -1,4 +1,4 @@
-# **printf**
+# **ft_printf**
 
 > score
 
@@ -26,8 +26,7 @@
 
 # ✲ Mandatory part
 
-> 🔗 [ft_printf.c](https://dogpark-42cursus.notion.site/ft_print-c-2f4cbaf720a8407292cd05240e4b6727)
-> <br>
+> 🔗 [ft_printf.c](https://dogpark-42cursus.notion.site/ft_print-c-2f4cbaf720a8407292cd05240e4b6727) > <br>
 > 🔗 [print_format.c](https://dogpark-42cursus.notion.site/print_format-c-4302a91c8dd44311a37d4a7c6207560b)
 
 <br>
