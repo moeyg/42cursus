@@ -36,7 +36,7 @@ static void	parse_specifier(const char specifier, va_list *ap, int *count)
 	if (specifier == 'p')
 	{
 		*count += write(1, "0x", 2);
-		print_hexadecimal('x', va_arg(*ap, unsigned long), count);
+		print_hexadecimal('x', (unsigned long long)va_arg(*ap, void*), count);
 	}
 	if (specifier == 'd' || specifier == 'i')
 		print_int(va_arg(*ap, int), count);
