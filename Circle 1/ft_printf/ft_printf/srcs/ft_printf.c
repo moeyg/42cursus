@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/29 19:41:21 by dogpark           #+#    #+#             */
+/*   Updated: 2023/03/29 19:48:41 by dogpark          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static void	parse_specifier(const char format, va_list *ap, int *count);
@@ -17,10 +29,10 @@ int	ft_printf(const char *format, ...)
 			parse_specifier(*format, &ap, &count);
 		}
 		else
-        {
+		{
 			write(1, format, 1);
 			count ++;
-        }
+		}
 		format ++;
 	}
 	va_end(ap);
@@ -36,7 +48,7 @@ static void	parse_specifier(const char specifier, va_list *ap, int *count)
 	if (specifier == 'p')
 	{
 		*count += write(1, "0x", 2);
-		print_hexadecimal('x', (unsigned long long)va_arg(*ap, void*), count);
+		print_hexadecimal('x', va_arg(*ap, unsigned long long), count);
 	}
 	if (specifier == 'd' || specifier == 'i')
 		print_int(va_arg(*ap, int), count);
