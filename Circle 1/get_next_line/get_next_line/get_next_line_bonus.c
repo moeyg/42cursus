@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/16 14:58:23 by dogpark           #+#    #+#             */
+/*   Updated: 2023/03/16 14:58:29 by dogpark          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line_bonus.h"
 
 static char	*read_line(int fd, char *backup);
@@ -117,3 +129,4 @@ static char	*ft_strchr(const char *str, int ascii_num)
 		return ((char *)str);
 	return (0);
 }
+
