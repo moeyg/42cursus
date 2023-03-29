@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/16 14:58:49 by dogpark           #+#    #+#             */
+/*   Updated: 2023/03/16 14:58:51 by dogpark          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
@@ -97,3 +109,4 @@ char	*ft_strjoin(char *prefix, char *suffix)
 	free(prefix);
 	return (result);
 }
+
