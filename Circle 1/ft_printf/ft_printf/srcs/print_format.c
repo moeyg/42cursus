@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_format.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/29 19:48:49 by dogpark           #+#    #+#             */
+/*   Updated: 2023/03/29 19:53:08 by dogpark          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void    print_char(char character, int *count)
+void	print_char(char character, int *count)
 {
 	write(1, &character, 1);
 	*count += 1;
 }
 
-void    print_string(char *string, int *count)
+void	print_string(char *string, int *count)
 {
 	unsigned int	index;
 
@@ -25,7 +37,7 @@ void    print_string(char *string, int *count)
 	*count += index;
 }
 
-void    print_int(int integer, int *count)
+void	print_int(int integer, int *count)
 {
 	char	num;
 
@@ -33,31 +45,31 @@ void    print_int(int integer, int *count)
 	{
 		write(1, "-2147483648", 11);
 		*count += 11;
-        return ;
+		return ;
 	}
 	if (integer < 0)
 	{
-        write(1, "-", 1);
-        *count += 1;
-        integer = -integer;
+		write(1, "-", 1);
+		*count += 1;
+		integer = -integer;
 	}
 	if (integer > 9)
 	{
-        print_int(integer / 10, count);
+		print_int(integer / 10, count);
 	}
 	num = (integer % 10) + '0';
 	write(1, &num, 1);
 	*count += 1;
 }
 
-void    print_unsigned_int(unsigned int integer, int *count)
+void	print_unsigned_int(unsigned int integer, int *count)
 {
 	char	num;
 
 	if (integer / 10 == 0)
-    {
+	{
 		num = integer + '0';
-    }
+	}
 	else
 	{
 		print_unsigned_int((integer / 10), count);
@@ -67,22 +79,23 @@ void    print_unsigned_int(unsigned int integer, int *count)
 	*count += 1;
 }
 
-void    print_hexadecimal(char specifier, unsigned long hexadecimal, int *count)
+void	print_hexadecimal(char specifier, unsigned long hex, int *count)
 {
-    char    *base;
+	char	*base;
 
-    if (specifier == 'x')
-    {
-        base = BASE_LOWERCASE;
-    }
-    if (specifier == 'X')
-    {
-        base = BASE_UPPERCASE;
-    }
-    if (hexadecimal > 15)
-    {
-        print_hexadecimal(specifier, hexadecimal / 16, count);
-    }
-    write(1, &base[hexadecimal % 16], 1);
-    *count += 1;
+	if (specifier == 'x')
+	{
+		base = BASE_LOWERCASE;
+	}
+	if (specifier == 'X')
+	{
+		base = BASE_UPPERCASE;
+	}
+	if (hex > 15)
+	{
+		print_hexadecimal(specifier, hex / 16, count);
+	}
+	write(1, &base[hex % 16], 1);
+	*count += 1;
 }
+
