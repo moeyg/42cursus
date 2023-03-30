@@ -1,5 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/03/29 19:42:21 by dogpark           #+#    #+#              #
+#    Updated: 2023/03/31 01:10:06 by moeyg            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # Compiler
-CC = gcc
+CC = cc
 
 # Compiler flag
 CFLAG = -Wall -Wextra -Werror
@@ -29,11 +41,7 @@ OBJECTS = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
-
-bonus:
-	make all
+	ar rcs $(NAME) $(OBJECTS)
 
 clean :
 	rm -f $(OBJECTS)
@@ -41,7 +49,6 @@ clean :
 fclean : clean
 	rm -f $(NAME)
 	
-re :
-	make fclean
+re : fclean all
 
 .PHONY:	all bonus clean fclean re
