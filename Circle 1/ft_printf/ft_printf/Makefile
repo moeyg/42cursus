@@ -10,28 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler
 CC = cc
 
-# Compiler flag
 CFLAG = -Wall -Wextra -Werror
 
-# Compile command line
 COMPILE = $(CC) $(CFLAG) -c $< -o $@ -I ${INCLUDES_DIRECTORY}
 
-# Library name
 NAME = libftprintf.a
 
-# Header file directory
 INCLUDES_DIRECTORY  = includes
 
-# Source directory
 SRCS_DIRECTORY = srcs
 
-# Source files
-SRCS =  $(addprefix ${SRCS_DIRECTORY}/,	\
-			./ft_printf.c \
-			./print_format.c)
+SRCS = $(addprefix $(SRCS_DIRECTORY)/, ft_printf.c print_format.c)
 
 OBJECTS = $(SRCS:.c=.o)
 
