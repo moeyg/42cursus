@@ -1,6 +1,6 @@
 # **ft_printf**
 
-> score
+> [![dogpark's 42 ft_printf Score](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/project/3048891)](https://github.com/JaeSeoKim/badge42)
 
 > 🔗 [ft_printf](https://dogpark-42cursus.notion.site/ft_printf-99e515c722584b2399349e0d904b1c5d)
 
