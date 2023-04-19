@@ -183,7 +183,6 @@ Broadcast message from root@wil (tty1) (Sun Apr 25 15:45:00 2021):
 
 
 ##### Below are two commands you can use to check some of the subject’s requirements:
-아래 두개는 과제의 요구사항을 체크할 수 있는 명령어입니다.
 ##### For Rocky: 
 
 ![4](https://user-images.githubusercontent.com/87311268/221546079-5f9b2d4a-c25f-4d82-a584-7edfa054d995.png)
