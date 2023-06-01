@@ -24,9 +24,7 @@ int main(int argc, char *argv[])
 	signal(SIGUSR1, receive_acknowledgement);
 	if (argc != 3)
 	{
-		ft_putstr_fd("Usage: ", 1);
-		write(1, argv[0], ft_strlen(argv[0]));
-		ft_putstr_fd(" PID MESSAGE\n", 1);
+		ft_putstr_fd("Usage: ./client PID MESSAGE\n", 1);
 		exit(0);
 	}
     pid = ft_atoi(argv[1]);
