@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 02:32:10 by dogpark           #+#    #+#             */
-/*   Updated: 2023/06/02 02:33:35 by moeyg            ###   ########.fr       */
+/*   Created: 2023/06/02 17:12:16 by dogpark           #+#    #+#             */
+/*   Updated: 2023/06/02 17:12:21 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-static void receive_acknowledgement(int signal_number);
+static void	receive_acknowledgement(int signal_number);
 static void	send_message(int pid, char *message);
 static void	send_termination_signal(int pid);
 static void	send_signal(int pid, int bit);
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-    int pid;
+	int	pid;
 
 	signal(SIGUSR1, receive_acknowledgement);
 	if (argc != 3)
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		ft_putstr_fd("Usage: ./client PID MESSAGE\n", 1);
 		exit(0);
 	}
-    pid = ft_atoi(argv[1]);
+	pid = ft_atoi(argv[1]);
 	if (pid <= 100 || pid > 99999)
 	{
 		ft_putstr_fd("PID must be in the range of 101 to 99999\n", 1);
@@ -39,31 +39,31 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-static void receive_acknowledgement(int signal_number)
+static void	receive_acknowledgement(int signal_number)
 {
-    if (signal_number == SIGUSR1)
-    {
-        ft_putstr_fd("ACK REVEICED!\n", 1);
-    }
-    exit(0);
+	if (signal_number == SIGUSR1)
+	{
+		ft_putstr_fd("ACK REVEICED!\n", 1);
+	}
+	exit(0);
 }
 
 static void	send_message(int pid, char *message)
 {
-    unsigned char   bit_mask;
+	unsigned char	bit_mask;
 
-    while (*message)
-    {
-        bit_mask = 0x80;
-        while(bit_mask)
-        {
-            send_signal(pid, bit_mask & *message);
-            bit_mask >>= 1;
-            usleep(100);
-        }
-        message++;
-    }
-    send_termination_signal(pid);
+	while (*message)
+	{
+		bit_mask = 0x80;
+		while (bit_mask)
+		{
+			send_signal(pid, bit_mask & *message);
+			bit_mask >>= 1;
+			usleep(100);
+		}
+		message++;
+	}
+	send_termination_signal(pid);
 }
 
 static void	send_termination_signal(int pid)
@@ -82,11 +82,11 @@ static void	send_termination_signal(int pid)
 static void	send_signal(int pid, int bit)
 {
 	if (bit)
-    {
+	{
 		kill(pid, SIGUSR1);
-    }
+	}
 	else
-    {
+	{
 		kill(pid, SIGUSR2);
-    }
+	}
 }
