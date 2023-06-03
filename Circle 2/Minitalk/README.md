@@ -1,6 +1,6 @@
 # Minitalk
 
-> Score
+> [![dogpark's 42 minitalk Score](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/project/3109558)](https://github.com/JaeSeoKim/badge42)
 
 > 🔗 [Minitalk](https://dogpark-42cursus.notion.site/Minitalk-c1bf479a8189448eb378fac331b2d6c1)
 
