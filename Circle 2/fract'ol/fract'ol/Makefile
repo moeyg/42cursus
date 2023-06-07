@@ -2,7 +2,7 @@
 CC = cc
 
 # Compiler flag
-CFLAGS = -Wall -Wextra -Werror -O3
+CFLAGS = -Wall -Wextra -Werror
 
 # File directory
 INCLUDES_DIRECTORY = includes
@@ -16,7 +16,6 @@ NAME = fractol
 libmlx = ./mlx/libmlx.a
 
 RED = \033[0;31m
-RESET = \033[0m
 
 # SRCS
 SRCS = $(addprefix $(SRCS_DIRECTORY)/, \
@@ -51,13 +50,13 @@ endif
 all : $(NAME)
 
 # Rule of compile source files to object files
-%.o: %.c ${INCLUDES_DIRECTORY} $(SRCS) $(CC) -c -o $@ $^
+%.o: %.c ${INCLUDES_DIRECTORY} $(SRCS) $(SRCS_BONUS) $(CC) -c -o $@ $^
 
 # Rule of build the final target
 $(NAME) : $(libmlx) $(OBJECTS_FINAL_VERSION)
 		ar rc $(NAME) $(libmlx) $(OBJECTS_FINAL_VERSION)
 		ranlib $(NAME)
-	@$(CC) -o $(NAME) $(OBJECTS) -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit
+	@$(CC) -o $(NAME) $(OBJECTS_FINAL_VERSION) -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 # Rule to build the MiniLibx
 $(libmlx):
@@ -76,9 +75,9 @@ clean :
 fclean : clean
 	rm -f $(libmlx)
 	rm -f $(NAME)
-	@echo "$(NAME): $(RED)object files were deleted$(RESET)"
-	@echo "$(NAME): $(RED)$(libmlx) was deleted$(RESET)"
-	@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)"
+	@echo "$(NAME): $(RED)object files were deleted"
+	@echo "$(NAME): $(RED)$(libmlx) was deleted"
+	@echo "$(NAME): $(RED)$(NAME) was deleted"
 
 # Rule to perform a clean build
 re : fclean all
