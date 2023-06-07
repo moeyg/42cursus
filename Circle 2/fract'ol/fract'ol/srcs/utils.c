@@ -1,7 +1,7 @@
 #include "../includes/fractol.h"
 
 static int		get_integer_length(int integer);
-static double	after_dot(const char *s, double lf);
+static double	process_fractional_part(const char *str, double result);
 
 int	ft_strcmp(const char *str1, const char *str2)
 {
@@ -23,47 +23,44 @@ int	ft_strcmp(const char *str1, const char *str2)
 	return (0);
 }
 
-double	ft_strtod(const char *s)
+double	ft_strtod(const char *str)
 {
 	int		sign;
-	double	lf;
+	double	result;
 
-	lf = 0;
 	sign = 1;
-	while (*s)
+	result = 0.0;
+	if (*str == '-')
 	{
-		if (*s == '.')
-		{
-			s++;
-			break ;
-		}
-		if (*s == '-')
-			sign = -1;
-		else
-		{
-			lf *= 10;
-			lf += *s - '0';
-		}
-		s++;
+		sign = -1;
+		str++;
 	}
-	return (lf = sign * after_dot(s, lf));
+	while ('0' <= *str && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+	if (*str == '.')
+	{
+		str++;
+		result += process_fractional_part(str, 0.0);
+	}
+	result *= sign;
+	return (result);
 }
 
-static double	after_dot(const char *s, double lf)
+static double	process_fractional_part(const char *str, double result)
 {
-	int		tmp;
-	int		level;
+	int	digit_count;
 
-	level = 0;
-	tmp = 0;
-	while (*s)
+	digit_count = 0;
+	while ('0' <= *str && *str <= '9')
 	{
-		tmp *= 10;
-		tmp += *s - '0';
-		level++;
-		s++;
+		result = result * 10 + (*str - '0');
+		digit_count++;
+		str++;
 	}
-	return (lf += (double)tmp * pow(0.1, level));
+	return (result * pow(0.1, digit_count));
 }
 
 char	*ft_itoa(int integer)
