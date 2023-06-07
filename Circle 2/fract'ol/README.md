@@ -1,10 +1,26 @@
 # Computer graphics project
 
-fract’ol
+## fract’ol
+
+> score
+
+> 🔗 [Fract'ol](https://dogpark-42cursus.notion.site/Fract-ol-f90f4c22f4fb4350ab5ec54515e35c6b?pvs=4)
 
 ##### _Summary: This project is meant to create graphically beautiful fractals._
 
 ##### _Version: 2_
+
+#### 🔗 : _This mark means a connection with a **Notion link**._
+
+<br>
+
+### 📄 Assignment
+
+> 🔗 [Assignment discription](https://dogpark-42cursus.notion.site/Assignment-11e11fd8a19a4064bb6a1b81fd3b5551?pvs=4)
+
+### 📌 Reference
+
+> 🔗 [Reference](https://dogpark-42cursus.notion.site/Reference-0af485d1470b43d4bede93ed19e515d9?pvs=4)
 
 <br>
 
