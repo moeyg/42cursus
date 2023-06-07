@@ -12,7 +12,7 @@ SRCS_BONUS_DIRECTORY = srcs_bonus
 # Library name
 NAME = fractol
 
-# Minilibx library
+# MiniLibx library
 libmlx = ./mlx/libmlx.a
 
 RED = \033[0;31m
@@ -47,25 +47,32 @@ else
 	OBJECTS_FINAL_VERSION = $(OBJECTS)
 endif
 
+# Build the main target
 all : $(NAME)
 
+# Rule of compile source files to object files
 %.o: %.c ${INCLUDES_DIRECTORY} $(SRCS) $(CC) -c -o $@ $^
 
+# Rule of build the final target
 $(NAME) : $(libmlx) $(OBJECTS_FINAL_VERSION)
 		ar rc $(NAME) $(libmlx) $(OBJECTS_FINAL_VERSION)
 		ranlib $(NAME)
 	@$(CC) -o $(NAME) $(OBJECTS) -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit
 
+# Rule to build the MiniLibx
 $(libmlx):
 	@$(MAKE) -sC ./mlx/
 
+# Rule to build the bonus target
 bonus:
 	$(MAKE) BONUS=1 all
 
+# Rule to clean the objects files
 clean :
 	@$(MAKE) -sC ./mlx/ clean
 	@rm -f $(OBJECTS) $(OBJECTS_BONUS)	
 
+# Rule to clean all generated files
 fclean : clean
 	rm -f $(libmlx)
 	rm -f $(NAME)
@@ -73,6 +80,8 @@ fclean : clean
 	@echo "$(NAME): $(RED)$(libmlx) was deleted$(RESET)"
 	@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)"
 
+# Rule to perform a clean build
 re : fclean all
 
+# Declare the phony targets (targets that are not associated with files)
 .PHONY : all bonus clean fclean re
