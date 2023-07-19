@@ -60,7 +60,7 @@
 
 # ✲ Mandatory part
 
-## 5.1 The rules
+## The rules
 
 - ##### _You have 2 [stacks](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) named a and b._
 
@@ -96,7 +96,7 @@
 
 <br>
 
-# ✲ Example
+## Example
 
 ##### _To illustrate the effect of some of these instructions, let’s sort a random list of integers.<br>In this example, we’ll consider that both stack are growing from the right._
 
@@ -166,7 +166,7 @@ a b
 
 <br>
 
-# ✲ The “push_swap” program
+## The “push_swap” program
 
 | **Program name** |push_swap|
 |---|---|
@@ -244,7 +244,7 @@ $>
 
 <br>
 
-# ✲ The "Checker" Program
+## The "Checker" Program
 
 | Program name | checker |
 | --- | --- |
