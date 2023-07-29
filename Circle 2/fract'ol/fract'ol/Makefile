@@ -7,7 +7,6 @@ CFLAGS = -Wall -Wextra -Werror
 # File directory
 INCLUDES_DIRECTORY = includes
 SRCS_DIRECTORY = srcs
-SRCS_BONUS_DIRECTORY = srcs_bonus
 
 # Library name
 NAME = fractol
@@ -27,30 +26,14 @@ SRCS = $(addprefix $(SRCS_DIRECTORY)/, \
 		utils.c \
 		setting.c)
 
-# SRCS_BONUS
-SRCS_BONUS = $(addprefix $(SRCS_BONUS_DIRECTORY)/, \
-		fractol_bonus.c \
-		draw_fractol_bonus.c \
-		calculate_fractol_bonus.c \
-		key_events_bonus.c \
-		mouse_events_bonus.c \
-		utils_bonus.c \
-		setting_bonus.c)
-
 OBJECTS = $(SRCS:.c=.o)
-OBJECTS_BONUS = $(SRCS_BONUS:.c=.o)
-
-ifdef BONUS
-	OBJECTS_FINAL_VERSION = $(OBJECTS_BONUS)
-else
-	OBJECTS_FINAL_VERSION = $(OBJECTS)
-endif
+OBJECTS_FINAL_VERSION = $(OBJECTS)
 
 # Build the main target
 all : $(NAME)
 
 # Rule of compile source files to object files
-%.o: %.c ${INCLUDES_DIRECTORY} $(SRCS) $(SRCS_BONUS) $(CC) -c -o $@ $^
+%.o: %.c ${INCLUDES_DIRECTORY} $(SRCS) $(CC) -c -o $@ $^
 
 # Rule of build the final target
 $(NAME) : $(libmlx) $(OBJECTS_FINAL_VERSION)
@@ -62,14 +45,10 @@ $(NAME) : $(libmlx) $(OBJECTS_FINAL_VERSION)
 $(libmlx):
 	@$(MAKE) -sC ./mlx/
 
-# Rule to build the bonus target
-bonus:
-	$(MAKE) BONUS=1 all
-
 # Rule to clean the objects files
 clean :
 	@$(MAKE) -sC ./mlx/ clean
-	@rm -f $(OBJECTS) $(OBJECTS_BONUS)	
+	@rm -f $(OBJECTS)
 
 # Rule to clean all generated files
 fclean : clean
@@ -83,4 +62,4 @@ fclean : clean
 re : fclean all
 
 # Declare the phony targets (targets that are not associated with files)
-.PHONY : all bonus clean fclean re
+.PHONY : all clean fclean re
