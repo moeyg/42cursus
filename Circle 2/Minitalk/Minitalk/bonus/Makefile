@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+         #
+#    By: moeyg <moeyg@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/02 17:14:10 by dogpark           #+#    #+#              #
-#    Updated: 2023/06/02 17:14:13 by dogpark          ###   ########.fr        #
+#    Updated: 2023/07/30 21:13:22 by moeyg            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,25 +29,16 @@ SERVER = server
 CLIENT = client
 
 # SERVER srcs
-SERVER_SRCS = $(addprefix $(SRCS_DIRECTORY)/, server.c utils.c)
-SERVER_BONUS_SRCS = $(addprefix $(SRCS_DIRECTORY)/, server_bonus.c utils.c)
+SERVER_SRCS = $(addprefix $(SRCS_DIRECTORY)/, server_bonus.c utils_bonus.c)
 
 # CLIENT srcs
-CLIENT_SRCS = $(addprefix $(SRCS_DIRECTORY)/, client.c utils.c)
-CLIENT_BONUS_SRCS = $(addprefix $(SRCS_DIRECTORY)/, client_bonus.c utils.c)
+CLIENT_SRCS =  $(addprefix $(SRCS_DIRECTORY)/, client_bonus.c utils_bonus.c)
 
 # SERVER objs
 SERVER_OBJS = $(SERVER_SRCS:.c=.o)
-SERVER_BONUS_OBJS = $(SERVER_BONUS_SRCS:.c=.o)
 
 # CLIENT objs
 CLIENT_OBJS = $(CLIENT_SRCS:.c=.o)
-CLIENT_BONUS_OBJS = $(CLIENT_BONUS_SRCS:.c=.o)
-
-ifdef BONUS
-	SERVER_OBJS = $(SERVER_BONUS_OBJS)
-	CLIENT_OBJS = $(CLIENT_BONUS_OBJS)
-endif
 
 all: $(NAME) $(SERVER) $(CLIENT)
 
@@ -58,15 +49,11 @@ $(NAME): $(SERVER_OBJS) $(CLIENT_OBJS)
 		ar rc $(NAME) $(SERVER_OBJS) $(CLIENT_OBJS)
 		ranlib $(NAME)
 
-
 $(SERVER): $(SERVER_OBJS)
 	$(CC) $(CFLAGS) $(SERVER_OBJS) -o $(SERVER)
 
 $(CLIENT): $(CLIENT_OBJS)
 	$(CC) $(CFLAGS) $(CLIENT_OBJS) -o $(CLIENT)
-
-bonus:
-	make BONUS=1 all
 
 clean:
 	rm -rf $(SERVER_OBJS) $(CLIENT_OBJS) $(SERVER_BONUS_OBJS) $(CLIENT_BONUS_OBJS)
@@ -76,4 +63,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
