@@ -2,7 +2,7 @@
 
 ## fract’ol
 
-> score
+> [![dogpark's 42 fract-ol Score](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/project/3190987)](https://github.com/JaeSeoKim/badge42)
 
 > 🔗 [Fract'ol](https://dogpark-42cursus.notion.site/Fract-ol-f90f4c22f4fb4350ab5ec54515e35c6b?pvs=4)
 
