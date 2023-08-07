@@ -11,6 +11,7 @@
 # include <pthread.h>
 # include <unistd.h>
 
+# define PARAMETER_ERROR	0
 # define INITIALIZE_ERROR	1
 # define SIMULATION_ERROR	2
 # define FREE_ERROR			3
