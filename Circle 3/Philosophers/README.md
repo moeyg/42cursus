@@ -1,6 +1,6 @@
 # **Philosophers**
 
-> score
+> [![dogpark's 42 Philosophers Score](https://badge42.vercel.app/api/v2/clam4rmh700350fjk8ctdih83/project/3222006)](https://github.com/JaeSeoKim/badge42)
 
 > 🔗 [Philosopher](https://dogpark-42cursus.notion.site/Philosophers-cc98022753a34b909cd60de86377ae73?pvs=4)
 
