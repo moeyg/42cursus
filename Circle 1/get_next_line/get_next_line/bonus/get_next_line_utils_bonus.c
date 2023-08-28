@@ -70,15 +70,15 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 char	*ft_strdup(const char *src)
 {
 	size_t	index;
-	size_t	src_lengthgth;
+	size_t	src_length;
 	char	*dest;
 
-	src_lengthgth = ft_strlen(src);
-	dest = (char *)malloc(src_lengthgth + 1);
+	src_length = ft_strlen(src);
+	dest = (char *)malloc(src_length + 1);
 	if (dest == NULL)
 		return (0);
 	index = 0;
-	while (index < src_lengthgth)
+	while (index < src_length)
 	{
 		dest[index] = src[index];
 		index ++;
