@@ -104,8 +104,6 @@
 
 # ✲ Bonus part
 
-<br>
-
 ##### _Your program has to implement:_
 
 - ##### _`&&, ||` with parenthesis for priorities._
