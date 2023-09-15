@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 15:24:49 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/09 20:01:53 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/09/15 21:01:48 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int ascii_num)
+char	*ft_strrchr(const char *str, int code_point)
 {
 	size_t	index;
 
 	index = ft_strlen(str);
-	while (index > 0 && str[index] != (char)ascii_num)
+	while (index > 0 && str[index] != (char)code_point)
 	{
 		index --;
 	}
-	if (str[index] == (char)ascii_num)
+	if (str[index] == (char)code_point)
 	{
 		return ((char *)(str + index));
 	}

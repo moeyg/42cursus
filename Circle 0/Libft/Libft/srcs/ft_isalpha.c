@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:49:41 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/08 13:06:31 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/09/15 21:01:48 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int ascii_num)
+int	ft_isalpha(int code_point)
 {
-	if (('a' <= ascii_num && ascii_num <= 'z')
-		|| ('A' <= ascii_num && ascii_num <= 'Z'))
+	if (('a' <= code_point && code_point <= 'z')
+		|| ('A' <= code_point && code_point <= 'Z'))
 	{
 		return (1);
 	}

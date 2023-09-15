@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:56:45 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/16 17:58:03 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/09/15 21:01:48 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,21 @@ typedef struct s_list
 }	t_list;
 
 /* Character management function */
-int		ft_isalpha(int ascii_num);
-int		ft_isdigit(int ascii_num);
-int		ft_isalnum(int ascii_num);
-int		ft_isascii(int ascii_num);
-int		ft_isprint(int ascii_num);
-int		ft_toupper(int ascii_num);
-int		ft_tolower(int ascii_num);
+int		ft_isalpha(int code_point);
+int		ft_isdigit(int code_point);
+int		ft_isalnum(int code_point);
+int		ft_isascii(int code_point);
+int		ft_isprint(int code_point);
+int		ft_toupper(int code_point);
+int		ft_tolower(int code_point);
 
 /* String function */
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size);
 size_t	ft_strlcat(char *dest, const char *src, size_t dest_size);
 int		ft_strncmp(const char *str1, const char *str2, size_t length);
-char	*ft_strchr(const char *str, int ascii_num);
-char	*ft_strrchr(const char *str, int ascii_num);
+char	*ft_strchr(const char *str, int code_point);
+char	*ft_strrchr(const char *str, int code_point);
 char	*ft_strnstr(const char *str, const char *content, size_t length);
 char	*ft_strdup(const char *str);
 char	*ft_strmapi(char const *str, char (*func)(unsigned int, char));

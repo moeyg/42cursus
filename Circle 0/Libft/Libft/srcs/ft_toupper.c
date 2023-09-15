@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42seoul.k>        +#+  +:+       +#+        */
+/*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 12:56:20 by dogpark           #+#    #+#             */
-/*   Updated: 2023/01/08 13:38:48 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/09/15 21:01:48 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int ascii_num)
+int	ft_toupper(int code_point)
 {
-	if ('a' <= ascii_num && ascii_num <= 'z')
+	if ('a' <= code_point && code_point <= 'z')
 	{
-		ascii_num -= 32;
+		code_point -= 32;
 	}
-	return (ascii_num);
+	return (code_point);
 }
