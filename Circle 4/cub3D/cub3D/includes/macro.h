@@ -2,9 +2,9 @@
 # define MACRO_H
 
 /* Code color information */
-# define RED "\033[0;31m"
+# define RED "\033[0;91m"
 # define GREEN "\033[0;32m"
-# define YELLOW "\033[0;33m"
+# define BLACK "\033[0;30m"
 # define RESET "\033[0m"
 
 # define TRUE 1
