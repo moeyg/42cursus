@@ -6,7 +6,7 @@
 /*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 22:50:32 by dogpark           #+#    #+#             */
-/*   Updated: 2023/09/21 19:48:47 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/09/21 20:51:04 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		print_usage();
 		exit_program("Invalid arguments.");
 	}
 	map = map_file(argv[1]);
@@ -48,12 +47,4 @@ int	map_file(char *map_file)
 		exit_program("Failed to open file.");
 	}
 	return (fd);
-}
-
-void	print_usage(void)
-{
-	printf(YELLOW);
-	printf("USAGE: ");
-	printf(RESET);
-	printf("./cub3D map.cub\n");
 }
