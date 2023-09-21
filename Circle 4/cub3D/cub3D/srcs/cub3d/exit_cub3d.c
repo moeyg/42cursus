@@ -6,7 +6,7 @@
 /*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:03:14 by dogpark           #+#    #+#             */
-/*   Updated: 2023/09/21 19:30:36 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/09/21 21:26:20 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ void	exit_program(char *message)
 void	print_error(char *message)
 {
 	printf(RED);
-	printf("ERROR: ");
+	printf("Error\n");
 	printf(RESET);
 	if (message)
 	{
+		printf(BLACK);
 		printf("%s\n", message);
+		printf(RESET);
 	}
 }
