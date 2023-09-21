@@ -6,7 +6,7 @@
 /*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:33:03 by dogpark           #+#    #+#             */
-/*   Updated: 2023/09/21 19:55:00 by dogpark          ###   ########.fr       */
+/*   Updated: 2023/09/21 20:51:17 by dogpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 
 /* main.c */
 int			map_file(char *map_file);
-void		print_usage(void);
 
 /* initialize.c */
 void		initialize_game(t_game *game, int map_fd);
