@@ -11,9 +11,13 @@ TCP는 패킷의 수신 확인을 실시하며 올바른 순서로 패킷이 전
 
 ## IP (Internet Protocol)
 
+<br>
+
 <div align="center">
-    <img src="./images/ip.png" height="200px">
+    <img src="./images/ip.png" height="250px">
 </div>
+
+<br>
 
 네트워크 상의 기기에 주소를 할당하거나 해당 주소로 패킷을 전송하는 역할을 수행한다. <br>
 TCP와 같은 상위 계층에서 수신한 패킷에 IP 헤더라는 정보를 추가하여 네트워크에 전송한다. IP 헤더에는 송∙수신지의 IP 주소 등의 정보가 담겨있으며, 패킷은 이를 바탕으로 올바르게 전송된다. <br>
@@ -28,19 +32,13 @@ IP에는 경로를 선택하는 방법도 정의되어 있어 여러 개의 네�
 네트워크 혼잡 상태에 따라 패킷의 손실이나 지연에 의해 순서가 뒤바뀌지 않도록 몇 가지 방법을 사용한다.
 
 1. 분할 순으로 시퀀스 번호를 부여한다.
-<div align="center">
-    <img src="./images/Numbering_in_division_order.png" height="120px">
-</div>
+   <img src="./images/Numbering_in_division_order.png" height="120px">
 
 2. 수신 측에서는 수신 패킷(ACK 패킷)을 송신 측에 전송한다.
-<div align="center">
-    <img src="./images/Transmit_ACK_packet.png" height="120px">
-</div>
+   <img src="./images/Transmit_ACK_packet.png" height="120px">
 
 3. 일정 시간이 지나도 응답이 없는 경우 패킷을 재전송하여 손실을 방지한다.
-<div align="center">
-    <img src="./images/re_send.png" height="120px">
-</div>
+   <img src="./images/re_send.png" height="120px">
 
 <br>
 
@@ -83,18 +81,38 @@ IP에는 경로를 선택하는 방법도 정의되어 있어 여러 개의 네�
 
 ## Subnet Mask
 
-네트워크의 규모가 커지면 단일 네트워크로 관리하는 것이 사실상 어렵다. 특히 <b>_브로드캐스트_</b>라고 하는 네트워크 전체에 송신하는 데이터 전송이 발생할 경우 필요하지 않은 범위까지 불필요하게 회선을 사용하게 되어 네트워크 전체 효율이 나빠진다. <br>
+네트워크의 규모가 커지면 단일 네트워크로 관리하는 것이 사실상 어렵다. 특히 <b>_브로드캐스트_</b>라고 하는 네트워크 전체에 송신하는 데이터 전송이 발생할 경우 필요하지 않은 범위까지 불필요하게 회선을 사용하게 되어 네트워크 전체 효율이 나빠진다. <br><br>
 
 <div align="center">
-    <img src="./images/subnet.png" height="200px">
+    <img src="./images/subnet.png" height="300px">
 </div>
 
-이러한 문제를 해결하기 위해 네트워크를 논리적으로 분할하는데, 이것이 <b>_서브넷_</b>이다. 즉, 원래는 하나여야 할 네트워크를 작은 단위로 분할한 것을 말한다. <br>
+<br>
+
+이러한 문제를 해결하기 위해 네트워크를 논리적으로 분할하는데, 이것이 <b>_서브넷_</b>이다. 즉, 원래는 하나여야 할 네트워크를 작은 단위로 분할한 것을 말한다. <br><br>
 
 <div align="center">
     <img src="./images/subnet_mask.png" height="200px">
 </div>
 
+<br>
+
 <b>_서브넷 마스크_</b>는 이러한 서브넷을 표현하기 위한 값으로, IP 주소의 앞에서부터 몇 비트까지 네트워크 주소로 사용할지 정의하기 위해 사용한다. <br>
 IP 주소는 네트워크 주소 부분과 호스트 주소 부분으로 나뉘는데, 서브넷 마스크에 의해 호스트 주소 부분 중 몇 개의 비트를 네트워크 주소 부분으로 재정의하여, 단일 네트워크를 서브넷으로 구분할 수 있다. <br>
 여기서 호스트 개수는 서브넷 네트워크 주소와 브로드캐스트 주소를 제외한 뒤의 비트 1 ~ 254로 총 254개이다. <br>
+
+<br>
+
+## CIDR 표기법
+
+<br>
+
+## Switch
+
+<br>
+
+## Router
+
+<br>
+
+## Routing table
