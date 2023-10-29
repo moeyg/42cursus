@@ -31,30 +31,28 @@ IP에는 경로를 선택하는 방법도 정의되어 있어 여러 개의 네�
 데이터 손실이 없고, 확실하게 전송되는, 신뢰성이 높은 데이터 통신을 보장한다. 이를 위해 통신 데이터를 패킷으로 분할하고, IP에 전달하여 송신한다. <br>
 네트워크 혼잡 상태에 따라 패킷의 손실이나 지연에 의해 순서가 뒤바뀌지 않도록 몇 가지 방법을 사용한다.
 
-1. 분할 순으로 시퀀스 번호를 부여한다.
+1. 분할 순으로 시퀀스 번호를 부여한다. <br>
    <img src="./images/Numbering_in_division_order.png" height="120px">
 
-2. 수신 측에서는 수신 패킷(ACK 패킷)을 송신 측에 전송한다.
+2. 수신 측에서는 수신 패킷(ACK 패킷)을 송신 측에 전송한다. <br>
    <img src="./images/Transmit_ACK_packet.png" height="120px">
 
-3. 일정 시간이 지나도 응답이 없는 경우 패킷을 재전송하여 손실을 방지한다.
+3. 일정 시간이 지나도 응답이 없는 경우 패킷을 재전송하여 손실을 방지한다. <br>
    <img src="./images/re_send.png" height="120px">
 
 <br>
 
 ## Packet
 
-패킷은 컴퓨터 통신에서 작게 분할된 통신 데이터 단위를 말한다. <br>
+패킷은 컴퓨터 통신에서 작게 분할된 통신 데이터 단위를 말한다. <br><br>
 
-<div align="center">
-    <img src="./images/big_packet.png" height="120px">
-</div>
+<img src="./images/big_packet.png" height="120px">
+<br>
 
-큰 데이터가 분할되지 않고 네트워크로 전송되면 이 데이터가 회선을 점유하여 다른 기기가 전혀 통신할 수 없는 문제가 발생한다. <br>
+큰 데이터가 분할되지 않고 네트워크로 전송되면 이 데이터가 회선을 점유하여 다른 기기가 전혀 통신할 수 없는 문제가 발생한다. <br><br>
 
-<div align="center">
-    <img src="./images/small_packets.png" height="120px">
-</div>
+<img src="./images/small_packets.png" height="120px">
+<br>
 
 따라서 통신 데이터 하나가 점유하는 시간을 최소로 만들어 회선을 공유하기 위해 패킷 단위로 작게 분할한다. <br>
 패킷에는 반드시 송신지와 수신지의 주소 같은 속성 정보가 포함되어 있어 네트워크를 통해 패킷이 올바른 목적지에 운반된다. <br>
