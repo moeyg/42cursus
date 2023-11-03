@@ -222,7 +222,7 @@ _Interface C1_ 과 _Interface D1_ 의 서브넷 마스크는 _255.255.255.252_ �
     IP Address 3    | xxxxxxxx xxxxxxxx xxxxxxxx xxxxxx10
     IP Address 4    | xxxxxxxx xxxxxxxx xxxxxxxx xxxxxx11
 
-IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소로 사용하므로, _Interface C1_ 과 _Interface D1_ 의 IP 주소로 사용할 수 있는 경우는 <b>_xxx.xxx.xxx.1_</b> 또는 <b>_xxx.xxx.xxx.2_</b> 이다.
+IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소로 사용하므로, _Interface C1_ 과 _Interface D1_ 의 IP 주소로 사용할 수 있는 경우는 <b>IP Address 2와 3</b>의 경우이다.
 (여기서 IPv4 주소 클래스의 루프백 주소(127)는 사용이 불가능하다.)
 
 <details>
