@@ -391,11 +391,13 @@ _Interface A1_ 의 IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을
 
 <br>
 
-_client A_ 가 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, Next hop은 _Interface R1_ 을 거치기 때문에, <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
+문제는 _Interface A1 need to communicate with interface Somewhere ont the Net_ 으로 제시되어 있다. <br>
 
-_router R_ 의 destination은 인터넷이므로 destination에 <b>_8.8.8.8/16_ </b> 를 CIDR 표기법으로 입력한다.
+_client A_ 가 패킷을 보낼 수 있는 경로는 _Interface Somewhere on the Net_ 이므로 라우팅 테이블의 destination은 <b>_8.8.8.8/16_</b> 으로 설정하고, Next hop은 _Interface R1_ 을 거치기 때문에, <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
 
-_Internet I_ 가 패킷을 보낼 destination은 _client A_ 이므로 destination에 _Interface A1의 IP 주소_ 를 CIDR 표기법으로 입력한다.
+_router R_ 의 destination도 _Interface Somewhere on the Net_ 이므로 라우팅 테이블의 destination은 <b>_8.8.8.8/16_</b> 으로 설정한다.
+
+_internet I_ 가 패킷을 보낼 destination은 _client A_ 이므로 destination에 _Interface A1의 IP 주소/Mask_ 를 CIDR 표기법으로 입력한다.
 
 <details>
 <summary>Level 6</summary>
