@@ -172,7 +172,7 @@ IP 주소가 집 주소라면 라우터는 우체국의 역할과 비슷하다. 
 
 라우팅 테이블은 네트워크 장비인 라우터 등에 사용되는 데이터 통신의 결정을 지원하는 중요한 도구이다. 라우팅 테이블은 목적지 네트워크로 패킷을 전달할 때 어떤 경로를 선택해야 하는지 결정하는데 사용된다. <br>
 
-<img src="./images/routing_table.png" height="300px"><br>
+<img src="./images/routing_table.png" width="300px"><br>
 
 다음은 라우팅 테이블에 대한 주요 특징과 역할에 대한 설명이다.
 
@@ -343,7 +343,7 @@ _Interface R1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & �
     Subnet Mask     | 11111111 11111111 11111111 10000000
     & 연산           | 01011001 00010010 00010111 00000000
 
-서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface A1_ 이 가질 수 있는 IP 주소의 범위는 <b>_89.18.23.1 ~ 89.18.23.126_</b> 이다. <br>
+서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface A1_ 이 가질 수 있는 IP 주소의 범위는 <b>_89.18.23.1 ~ 89.18.23.126_</b> 사이의 값 중 _Interface R1_ IP 주소를 제외한 값이다. <br>
 
 _Interface B1_ 의 서브넷 마스크는 _Interface R2_ 과 동일하게 <b>_255.255.192.0_</b> 을 갖는다.
 _Interface R2_ IP 주소와 해당 서브넷 마스크 _255.255.192.0_ 을 & 연산하면 다음과 같다. <br>
@@ -352,9 +352,58 @@ _Interface R2_ IP 주소와 해당 서브넷 마스크 _255.255.192.0_ 을 & 연
     Subnet Mask     | 11111111 11111111 11000000 00000000
     & 연산           | 10100101 10111110 11000000 00000000
 
-서브넷 마스크에 따라 아래 14 비트를 변경할 수 있으므로, _Interface A1_ 이 가질 수 있는 IP 주소의 범위는 <b>_165.190.192.1 ~ 165.190.255.254_</b> 이다. <br>
+서브넷 마스크에 따라 아래 14 비트를 변경할 수 있으므로, _Interface A1_ 이 가질 수 있는 IP 주소의 범위는 <b>_165.190.192.1 ~ 165.190.255.254_</b> 사이의 값 중 _Interface R2_ IP 주소를 제외한 값이다. <br>
 
 <br>
 
-_client A_ 가 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
-_client B_ 도 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, <b>_Interface R2 의 IP 주소_</b> 를 입력한다.
+_client A_ 가 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, Next hop은 <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
+_client B_ 도 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, Next hop은 <b>_Interface R2 의 IP 주소_</b> 를 입력한다.
+
+<details>
+<summary>Level 5</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv5.png" height="600px">
+</div>
+</details>
+
+<br>
+<hr>
+<br>
+
+## Level 6
+
+<div align="center">
+    <img src="./images/level/question/Lv6.png" height="600px">
+</div>
+
+<br>
+
+Level 6은 인터넷과 통신하는 경로를 보여준다. <br>
+우선 _Interface A1_ 과 _Interface R1_ 이 스위치로 연결되어 있으므로, _Interface A1_ 의 서브넷 마스크는 <b>_255.255.255.128_</b> 이다. <br>
+
+_Interface A1_ 의 IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & 연산하면 다음과 같다. <br>
+
+    Interface A1 IP | 00010100 10100010 11101111 11100011
+    Subnet Mask     | 11111111 11111111 11111111 10000000
+    & 연산           | 00010100 10100010 11101111 10000000
+
+서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface R1_ 이 가질 수 있는 IP 주소의 범위는 <b>_20.162.239.129 ~ 165.190.255.254_</b> 사이의 값 중 _Interface A1_ 의 IP 주소를 제외한 값이다. <br>
+
+<br>
+
+_client A_ 가 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, Next hop은 _Interface R1_ 을 거치기 때문에, <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
+
+_router R_ 의 destination은 인터넷이므로 destination에 <b>_8.8.8.8/16_ </b> 를 CIRD 표기법으로 입력한다.
+
+_Internet I_ 가 패킷을 보낼 destination은 _client A_ 이므로 destination에 _Interface A1의 IP 주소_ 를 CIRD 표기법으로 입력한다.
+
+<details>
+<summary>Level 6</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv6.png" height="600px">
+</div>
+</details>
+
+<br>
+<hr>
+<br>
