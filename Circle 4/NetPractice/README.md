@@ -527,3 +527,10 @@ _Interface R1_ 과 _Interface R2_ 는 Subnet 4 주소를 사용하고, <br>
 
 _router R1_, _router R2_, _client C_, _client D_ 라우팅 테이블의 destination에는 공통적으로 _default_ 로 적어준다. <br>
 그리고 Next hop 자리에는 각각 연결된 라우터의 IP 주소를 입력해 준다. <br>
+
+<details>
+<summary>Level 8</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv8.png" height="600px">
+</div>
+</details>
