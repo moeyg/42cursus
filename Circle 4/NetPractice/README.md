@@ -126,8 +126,6 @@ IP 주소와 그와 관련된 서브넷 마스크를 표기하기 위한 방법�
 
     IP 주소 / 서브넷 마스크 길이
 
-<br>
-
 <b> 예시 1) 192.168.0.1/25가 의미하는 서브넷 마스크 값은? </b> <br>
 
 25 비트를 네트워크 주소르 사용하고, 나머지 7 비트를 호스트 주소로 사용하겠다는 의미이다. <br> 즉, _255.255.255.128(11111111.11111111.11111111.10000000)_ 이 서브넷 마스크 값이다. <br>
@@ -144,15 +142,65 @@ _255.255.255.248_ 의 경우 32개의 서브넷으로 나눌 수 있다. (네트
 
 <br>
 
+## Hub
+
+<div align="center">
+    <img src="./images/hub.png" height="150px">
+</div>
+
+허브는 여러 개의 LAN 케이블을 연결하는 접선 장치다. 컴퓨터는 포트와 일대일로 연결되기 때문에 허브의 포트 수가 그 허브에 연결할 수 있는 컴퓨터의 수다. <br>
+제품에 따라 포트 수는 다양하지만, 만약 포트 수가 부족하면 여러 대의 허브를 연결하는 형태로 간단하게 포트를 늘릴 수 있다.
+
+<br>
+
 ## Switch
+
+스위칭 기능을 가진 허브로, 여러 개의 LAN 케이블을 연결하기 위한 접선 장치다. <br>
+스위칭 기능은 허브가 가진 여러 개의 포트 중에 실제로 통신이 발생한 포트만 연결하여 다른 포트에는 불필요한 패킷을 전송하지 않도록 한 것이다. <br>
+스위칭 허브는 실제로 통신을 실시하는 포트에만 패킷을 보내기 때문에 다른 포트는 동시에 다른 통신을 할 수 있다. 이처럼 패킷 충돌을 억제하기 때문에 네트워크 효율성을 향상시킬 수 있다. <br>
 
 <br>
 
 ## Router
 
+<div align="center">
+    <img src="./images/router.png" height="110px">
+</div>
+
+서로 다른 네트워크를 상호 연결하기 위해 사용한다. 라우터는 네트워크 프로토콜 수준에서 경로 정보(라우팅 테이블)를 관리한다. 이 경로 정보를 기반으로 수신지의 네트워크로 통신 데이터를 중계한다. <br>
+라우터가 대응하는 프로토콜은 제품마다 정해져 있으며, 저렴한 제품은 IP에만 대응하는 것이 일반적이다. 이 경우 경로를 선택할 때 주소 정보로 IP 주소를 사용한다. <br>
+
+<div align="center">
+    <img src="./images/LAN_router.png" height="200px">
+</div>
+IP 주소가 집 주소라면 라우터는 우체국의 역할과 비슷하다. IP 주소를 바탕으로 자신이 속한 네트워크 내가 수신지라면 외부로 송신하지 않고, 외부의 네트워크가 수신지라면 그쪽 네트워크를 담당하는 라우터에 패킷을 전송한다. <br>
+
+<div align="center">
+    <img src="./images/wide_router.png" height="200px">
+</div>
+하지만 인터넷처럼 연결된 네트워크가 방대한 경우에는 직접 상대방의 네트워크에 전송하는 것이 불가능하다. 이 경우 좀 더 처리하기에 적합하다고 생각하는 라우터에 다시 전송하는 식으로 최종 목적지 네트워크에 전당한다.
+
 <br>
 
 ## Routing table
+
+라우팅 테이블은 네트워크 장비인 라우터 등에 사용되는 데이터 통신의 결정을 지원하는 중요한 도구이다. 라우팅 테이블은 목적지 네트워크로 패킷을 전달할 때 어떤 경로를 선택해야 하는지 결정하는데 사용된다. <br>
+
+<div align="center">
+    <img src="./images/routing_table.png" height="200px">
+</div>
+
+다음은 라우팅 테이블에 대한 주요 특징과 역할에 대한 설명이다.
+
+    목적지 네트워크 정보: 라우팅 테이블은 여러 목적지 네트워크와 관련된 정보를 포함한다. 각 항목은 목적지 네트워크 IP 주소 또는 서브넷을 나타내며, 해당 네트워크로 전송할 패킷의 경로를 결정하는 데 사용된다.
+
+    default, 0.0.0.0/0: 디폴트 라우트로 목적지 주소가 지정되지 않았거나 다른 라우팅 항목과 일치하지 않을 때 사용된다.
+
+    네트워크 마스크: 각 라우팅 테이블 항목은 목적지 네트워크 IP 주소와 함께 해당 네트워크를 식별하는 데 사용되는 서브넷 마스크를 포함한다. 서브넷 마스크는 목적지 주소의 네트워크 부분과 호스트 부분을 분리하는 역할을 한다.
+
+    다음 홉(Next Hop) 정보: 라우팅 테이블에는 목적지 네트워크로 데이터 패킷을 전송할 때 사용해야 하는 다음 홉의 정보가 포함된다. 이 정보는 목적지로 향하는 패킷의 경로를 결정한다.
+
+    그 외 인터페이스 정보, 거리 정보, 라우팅 프로토콜에 의한 업데이트 등의 특징을 갖는다.
 
 <br>
 <hr>
@@ -161,7 +209,7 @@ _255.255.255.248_ 의 경우 32개의 서브넷으로 나눌 수 있다. (네트
 ## Level 1
 
 <div align="center">
-    <img src="./images/level/question/Lv1.png" height="400px">
+    <img src="./images/level/question/Lv1.png" height="500px">
 </div>
 
 <br>
@@ -176,7 +224,7 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 
 서브넷 마스크에 따라 아래 8 비트를 변경할 수 있으므로, _Interface A1_ 의 IP 주소는, _104.98.23.1 ~ 104.98.23.254_ 사이에서 _Interface B1_ IP 주소를 제외한 값이다. (0은 네트워크 주소이고, 255는 브로드캐스트 주소이며, 12는 _Interface B1_ 의 주소이다.) <br>
 
-마찬가지로 _Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.0.0_ 을 & 연산하면, <br>
+마찬가지로 _Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.0.0_ 을 & 연산하면 다음과 같다. <br>
 
     Interface C1 IP | 11010011 10111111 01000011 01001011
     Subnet Mask     | 11111111 11111111 00000000 00000000
@@ -187,7 +235,7 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 <details>
 <summary>Level 1</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv1.png" height="400px">
+    <img src="./images/level/answer/Lv1.png" height="500px">
 </div>
 </details>
 
@@ -198,7 +246,7 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 ## Level 2
 
 <div align="center">
-    <img src="./images/level/question/Lv2.png" height="400px">
+    <img src="./images/level/question/Lv2.png" height="450px">
 </div>
 
 <br>
@@ -228,7 +276,7 @@ IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소�
 <details>
 <summary>Level 2</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv2.png" height="400px">
+    <img src="./images/level/answer/Lv2.png" height="450px">
 </div>
 </details>
 
@@ -239,9 +287,25 @@ IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소�
 ## Level 3
 
 <div align="center">
-    <img src="./images/level/question/Lv3.png" height="400px">
+    <img src="./images/level/question/Lv3.png" height="550px">
 </div>
 
 <br>
 
-Level 3는
+Level 3는 _Interface A1_, _Interface B1_, _Interface C1_ 이 하나의 스위치로 연결되어 있다. <br>
+스위치는 여러 개의 LAN 케이블을 연결하기 위한 접선 장치이기 때문에 우선 _Interface A1_, _Interface B1_ 의 서브넷 마스크는 _Interface C1_ 의 서브넷 마스크와 일치해야 하므로 <b>_255.255.255.128_</b> 이다. <br>
+
+_Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & 연산하면, <br>
+
+    Interface C1 IP | 01101000 11000110 11011011 01111101
+    Subnet Mask     | 11111111 11111111 11111111 10000000
+    & 연산           | 01101000 11000110 11011011 00000000
+
+서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface A1_, _Interface B1_ 가 가질 수 있는 IP 주소의 범위는 00000000 부터 01111111 로 <b>_104.198.219.1 ~ 104.198.219.126_</b> 사이에서 _Interface C1_ 의 IP 주소를 제외한 값이다. (마찬가지로 0은 네트워크 주소, 127은 브로드캐스트 주소이다.)
+
+<details>
+<summary>Level 3</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv3.png" height="550px">
+</div>
+</details>
