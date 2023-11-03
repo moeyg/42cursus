@@ -192,6 +192,9 @@ IP 주소가 집 주소라면 라우터는 우체국의 역할과 비슷하다. 
 
 ## Level 1
 
+<details>
+<summary>Commentary</summary>
+
 <div align="center">
     <img src="./images/level/question/Lv1.png" height="500px">
 </div>
@@ -216,18 +219,21 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 
 서브넷 마스크에 따라 아래 16 비트를 변경할 수 있으므로, _Interface D1_ 의 IP 주소는, _211.191.0.1 ~ 211.191.255.254_ 사이에서 _Interface C1_ 의 IP 주소를 제외한 값이다. <br>
 
+</details>
+
 <details>
-<summary>Level 1</summary>
+<summary>Answer</summary>
 <div align="center">
     <img src="./images/level/answer/Lv1.png" height="500px">
 </div>
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 2
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv2.png" height="500px">
@@ -257,18 +263,21 @@ _Interface C1_ 과 _Interface D1_ 의 서브넷 마스크는 _255.255.255.252_ �
 IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소로 사용하므로, _Interface C1_ 과 _Interface D1_ 의 IP 주소로 사용할 수 있는 경우는 <b>IP Address 2와 3</b>의 경우이다.
 (여기서 IPv4 주소 클래스의 루프백 주소(127)는 사용이 불가능하다.)
 
+</details>
+
 <details>
-<summary>Level 2</summary>
+<summary>Answer</summary>
 <div align="center">
     <img src="./images/level/answer/Lv2.png" height="500px">
 </div>
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 3
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv3.png" height="600px">
@@ -287,18 +296,21 @@ _Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & �
 
 서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface A1_, _Interface B1_ 이 가질 수 있는 IP 주소의 범위는 00000000 부터 01111111 로 <b>_104.198.219.1 ~ 104.198.219.126_</b> 사이에서 _Interface C1_ 의 IP 주소를 제외한 값이다. (마찬가지로 0은 네트워크 주소, 127은 브로드캐스트 주소이다.)
 
+</details>
+
 <details>
-<summary>Level 3</summary>
+<summary>Answer</summary>
 <div align="center">
     <img src="./images/level/answer/Lv3.png" height="600px">
 </div>
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 4
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv4.png" height="600px">
@@ -316,18 +328,21 @@ _Interface A1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 
 서브넷 마스크에 따라 아래 8 비트를 변경할 수 있으므로, _Interface B1_, _Interface R1_ 이 가질 수 있는 IP 주소의 범위는 <b>_97.170.117.1 ~ 97.170.117.132.254_</b> 사이에서 _Interface A1_ IP 주소를 제외해야 한다. 추가로 _Interface R1_ 은 _Interface R2_, _Interface R3_ 와 중복되지 않는 의 IP 주소 값을 가져야한다.
 
+</details>
+
 <details>
-<summary>Level 4</summary>
+<summary>Answer</summary>
 <div align="center">
     <img src="./images/level/answer/Lv4.png" height="600px">
 </div>
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 5
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv5.png" height="600px">
@@ -359,6 +374,8 @@ _Interface R2_ IP 주소와 해당 서브넷 마스크 _255.255.192.0_ 을 & 연
 _client A_ 가 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, Next hop은 <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
 _client B_ 도 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, Next hop은 <b>_Interface R2 의 IP 주소_</b> 를 입력한다.
 
+</details>
+
 <details>
 <summary>Level 5</summary>
 <div align="center">
@@ -367,10 +384,11 @@ _client B_ 도 패킷을 보낼 수 있는 경로는 오직 하나이므로 라�
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 6
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv6.png" height="600px">
@@ -399,18 +417,21 @@ _router R_ 의 destination도 _Interface Somewhere on the Net_ 이므로 라우�
 
 _internet I_ 가 패킷을 보낼 destination은 _client A_ 이므로 destination에 _Interface A1의 IP 주소/Mask_ 를 CIDR 표기법으로 입력한다.
 
+</details>
+
 <details>
-<summary>Level 6</summary>
+<summary>Answer</summary>
 <div align="center">
     <img src="./images/level/answer/Lv6.png" height="600px">
 </div>
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 7
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv7.png" height="600px">
@@ -466,18 +487,21 @@ _router R2_ 의 라우팅 테이블에서 destination은 _default_ 로 작성한
     목적지 주소가 수천 개 또는 그 이상인 대규모 네트워크에서 모든 목적지를 명시적으로 정의하는 것은 번거로울 수 있으며,
     디폴트 라우트를 사용하면 테이블의 크기를 줄일 수 있다.
 
+</details>
+
 <details>
-<summary>Level 7</summary>
+<summary>Answer</summary>
 <div align="center">
     <img src="./images/level/answer/Lv7.png" height="600px">
 </div>
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 8
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv8.png" height="600px">
@@ -526,20 +550,23 @@ _Interface R2_ 와 _Interface D1_ 는 Subnet 2 주소를 사용한다. <br>
 _Interface R1_ 과 _Interface R2_ 는 Subnet 4 주소를 사용하고, <br>
 
 _router R1_, _router R2_, _client C_, _client D_ 라우팅 테이블의 destination에는 공통적으로 _default_ 로 적어준다. <br>
-그리고 Next hop 자리에는 각각 연결된 라우터의 IP 주소를 입력해 준다. <br>
+그리고 Next hop 자리에는 각각 연결된 라우터의 IP 주소를 입력해 준다.
+
+</details>
 
 <details>
-<summary>Level 8</summary>
+<summary>Answer</summary>
 <div align="center">
     <img src="./images/level/answer/Lv8.png" height="600px">
 </div>
 </details>
 
 <br>
-<hr>
-<br>
 
 ## Level 9
+
+<details>
+<summary>Commentary</summary>
 
 <div align="center">
     <img src="./images/level/question/Lv9.png" height="750px">
@@ -591,15 +618,15 @@ _client C_ 는 _Interface R22_ 를 통해 통신하므로, Next hop에 <b>_Inter
 
 _Goal 3_ 와 _Goal 6_ 을 고려했을 때, _internet I_ 의 destination에 들어갈 수 있는 IP 주소는 <b>_client A: meson_ 과 _client C: cation_ 의 IP 주소</b>를 각각 입력한다.
 
+</details>
+
 <details>
-<summary>Level 9</summary>
+<summary>Answer</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv9.png" height="600px">
+    <img src="./images/level/answer/Lv9.png" height="750px">
 </div>
 </details>
 
-<br>
-<hr>
 <br>
 
 ## Level 10
