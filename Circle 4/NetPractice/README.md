@@ -462,7 +462,9 @@ _router R1_ 의 라우팅 테이블에서 destination은 _default_ 로 작성한
 <img src="./images/level/question/Lv7_R2.png" height="100px"><br>
 _router R2_ 의 라우팅 테이블에서 destination은 _default_ 로 작성한다. 그리고 패킷이 전달될 수 있도록 다음 라우터(_Interface R12_) IP 주소를 입력한다. <br>
 
-    💡 디폴트 라우트(default 또는 0.0.0.0/0)를 사용하면 라우팅 테이블을 간단하게 유지할 수 있다. 목적지 주소가 수천 개 또는 그 이상인 대규모 네트워크에서 모든 목적지를 명시적으로 정의하는 것은 번거로울 수 있으며, 디폴트 라우트를 사용하면 테이블의 크기를 줄일 수 있다.
+    💡 디폴트 라우트(default 또는 0.0.0.0/0)를 사용하면 라우팅 테이블을 간단하게 유지할 수 있다.
+    목적지 주소가 수천 개 또는 그 이상인 대규모 네트워크에서 모든 목적지를 명시적으로 정의하는 것은 번거로울 수 있으며,
+    디폴트 라우트를 사용하면 테이블의 크기를 줄일 수 있다.
 
 <details>
 <summary>Level 7</summary>
@@ -470,3 +472,58 @@ _router R2_ 의 라우팅 테이블에서 destination은 _default_ 로 작성한
     <img src="./images/level/answer/Lv7.png" height="600px">
 </div>
 </details>
+
+<br>
+<hr>
+<br>
+
+## Level 8
+
+<div align="center">
+    <img src="./images/level/question/Lv8.png" height="600px">
+</div>
+
+<br>
+
+_internet I_ 은 _Interface R12_ 와 연결되어 있다. 따라서 _internet I_ 의 라우팅 테이블에서 Next hop은 _Interface R12의 IP 주소_ 라는 것을 알 수 있다. <br>
+또한, destination이 _150.78.234.0/26_ 라는 것을 통해 모든 Interface의 범위를 구하면, <br>
+
+    Destination | 10010110 01001110 11101010 00000000
+    Subnet Mask | 11111111 11111111 11111111 11000000
+    & 연산       | 10010110 01001110 11101010 00000000
+
+서브넷 마스크에 따라 아래 6 비트를 변경할 수 있으므로, Interface 가 가질 수 있는 IP 주소의 범위는 <b>_150.78.234.1 ~ 150.78.234.62_</b> 사이의 값을 갖는다. <br>
+따라서 모든 패킷을 받는 네트워크는 중복되지 않으면서 위 범위 안에 있어야 한다. <br>
+<br>
+또한, _Interface R12_ 와 _Interface D1_ 의 서브넷 마스크가 _255.255.255.240(/28)_ 이므로, 모든 Interface 의 서브넷 마스크를 편의상 동일하게 <b>_255.255.255.240_</b> 로 입력한다. <br>
+_/28_ 을 서브넷 마스크로 사용할 경우 총 2^4 = 16 개의 서브넷을 생성할 수 있다. <br>
+
+    Subnet 1. 150.78.234.1 ~ 150.78.234.14
+    Subnet 2. 150.78.234.17 ~ 150.78.234.30
+    Subnet 3. 150.78.234.33 ~ 150.78.234.46
+    Subnet 4. 150.78.234.49 ~ 150.78.234.62
+    Subnet 5. 150.78.234.65 ~ 150.78.234.78
+    Subnet 6. 150.78.234.81 ~ 150.78.234.94
+    Subnet 7. 150.78.234.97 ~ 150.78.234.110
+    Subnet 8. 150.78.234.113 ~ 150.78.234.126
+    Subnet 9. 150.78.234.129 ~ 150.78.234.142
+    Subnet 10. 150.78.234.145 ~ 150.78.234.158
+    Subnet 11. 150.78.234.161 ~ 150.78.234.174
+    Subnet 12. 150.78.234.177 ~ 150.78.234.190
+    Subnet 13. 150.78.234.193 ~ 150.78.234.206
+    Subnet 14. 150.78.234.209 ~ 150.78.234.222
+    Subnet 15. 150.78.234.225 ~ 150.78.234.238
+    Subnet 16. 150.78.234.241 ~ 150.78.234.254
+
+<br>
+<img src="./images/level/question/Lv8_R2.png" height="100px"><br>
+
+여기서 _router R2_ 의 Next hop 고정 값을 보면, _150.78.234.62_ 로 되어 있고, _Interface R13_ 과 연결되어 있기 때문에, _Interface R13_ 의 IP 주소값은 _150.78.234.62_ 이다. <br>
+
+Interface 가 가질 수 있는 IP 주소의 범위는 <b>_150.78.234.1 ~ 150.78.234.62_</b> 사이의 값을 갖기 때문에, Subnet 1, 2, 3, 4를 사용할 수 있다.<br>
+_Interface R2_ 와 _Interface C1_ 는 Subnet 1 주소를 사용하고, <br>
+_Interface R2_ 와 _Interface D1_ 는 Subnet 2 주소를 사용한다. <br>
+_Interface R1_ 과 _Interface R2_ 는 Subnet 4 주소를 사용하고, <br>
+
+_router R1_, _router R2_, _client C_, _client D_ 라우팅 테이블의 destination에는 공통적으로 _default_ 로 적어준다. <br>
+그리고 Next hop 자리에는 각각 연결된 라우터의 IP 주소를 입력해 준다. <br>
