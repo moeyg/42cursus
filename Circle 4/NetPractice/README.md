@@ -84,27 +84,17 @@ IP 주소 클래스는 IP 주소 체계를 네 가지 주요 클래스로 나누
     클래스 A 주소 대역 (1.0.0.0 ~ 126.0.0.0)
     : 첫 번째 옥텟이 네트워크 식별자로 사용되고 남은 3개의 옥텟은 호스트 주소로 사용된다. 클래스 A 주소는 대규모 네트워크에 할당된다.
 
-<br>
-
     클래스 B 주소 대역 (128.0.0.0 ~ 191.0.0.0)
     : 첫 번째 2개의 옥텟이 네트워크 식별자로 사용되고 남은 2개의 옥텟은 호스트 주소로 사용된다. 클래스 B 주소는 중간 규모의 네트워크에 할당된다.
-
-<br>
 
     클래스 C 주소 대역 (192.0.0.0 ~ 223.0.0.0)
     : 첫 번째 3개의 옥텟이 네트워크 식별자로 사용되고 마지막 옥텟은 호스트 주소로 사용된다. 클래스 C 주소는 소규모 네트워크에 할당된다.
 
-<br>
-
     클래스 D 주소 대역 (224.0.0.0 ~ 239.0.0.0)
     : 클래스 D 주소는 멀티캐스트 그룹 통신에 사용된다. 멀티캐스트 주소는 여러 호스트에 패킷을 동시에 전송하는데 사용된다.
 
-<br>
-
     클래스 E 주소 대역 (240.0.0.0 ~ 255.0.0.0)
     : 클래스 E 주소는 특정 실험 및 연구를 위해 예약되어 있다.
-
-<br>
 
     루프백 주소 (127.0.0.0 ~ 127.255.255.255)
     : 위 IP 주소의 범위는 루프백 주소로 예약되어 있으며, 이 주소 범위의 각 IP 주소는 로컬 호스트 또는 로컬 머신을 가리키며, 데이터를 루프백 인터페이스를 통해 자체로 전달한다.
@@ -177,7 +167,7 @@ _255.255.255.248_ 의 경우 32개의 서브넷으로 나눌 수 있다. (네트
 ## Level 1
 
 <div align="center">
-    <img src="./images/level/question/Lv1.png" height="300px">
+    <img src="./images/level/question/Lv1.png" height="400px">
 </div>
 
 <br>
@@ -202,7 +192,7 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0(11111111.1
 <details>
 <summary>Level 1</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv1.png" height="300px">
+    <img src="./images/level/answer/Lv1.png" height="400px">
 </div>
 </details>
 
@@ -213,7 +203,7 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0(11111111.1
 ## Level 2
 
 <div align="center">
-    <img src="./images/level/question/Lv2.png" height="300px">
+    <img src="./images/level/question/Lv2.png" height="400px">
 </div>
 
 <br>
@@ -221,7 +211,7 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0(11111111.1
 <details>
 <summary>Level 2</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv2.png" height="300px">
+    <img src="./images/level/answer/Lv2.png" height="400px">
 </div>
 </details>
 
