@@ -123,7 +123,7 @@ IP 주소와 그와 관련된 서브넷 마스크를 표기하기 위한 방법�
 
 <br>
 
-    예시 2) IPv4의 C 클래스 네트워크를 26개의 서브넷으로 나누고 , 각 서브넷에는 4~5개의 호스트를 연결하려고 한다.
+    예시 2) IPv4의 C 클래스 네트워크를 26개의 서브넷으로 나누고, 각 서브넷에는 4~5개의 호스트를 연결하려고 한다.
     이러한 서브넷을 구성하기 위한 서브넷 마스크 값은?
 
     255.255.255.128 의 경우 2개의 서브넷으로 나눌 수 있다. (네트워크 주소를 1개 쓸 경우, 0 또는 1)
@@ -172,7 +172,7 @@ IP 주소가 집 주소라면 라우터는 우체국의 역할과 비슷하다. 
 
 라우팅 테이블은 네트워크 장비인 라우터 등에 사용되는 데이터 통신의 결정을 지원하는 중요한 도구이다. 라우팅 테이블은 목적지 네트워크로 패킷을 전달할 때 어떤 경로를 선택해야 하는지 결정하는데 사용된다. <br>
 
-<img src="./images/routing_table.png" width="300px"><br>
+<img src="./images/routing_table.png" height="100px"><br>
 
 다음은 라우팅 테이블에 대한 주요 특징과 역할에 대한 설명이다.
 
@@ -393,9 +393,9 @@ _Interface A1_ 의 IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을
 
 _client A_ 가 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, Next hop은 _Interface R1_ 을 거치기 때문에, <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
 
-_router R_ 의 destination은 인터넷이므로 destination에 <b>_8.8.8.8/16_ </b> 를 CIRD 표기법으로 입력한다.
+_router R_ 의 destination은 인터넷이므로 destination에 <b>_8.8.8.8/16_ </b> 를 CIDR 표기법으로 입력한다.
 
-_Internet I_ 가 패킷을 보낼 destination은 _client A_ 이므로 destination에 _Interface A1의 IP 주소_ 를 CIRD 표기법으로 입력한다.
+_Internet I_ 가 패킷을 보낼 destination은 _client A_ 이므로 destination에 _Interface A1의 IP 주소_ 를 CIDR 표기법으로 입력한다.
 
 <details>
 <summary>Level 6</summary>
@@ -407,3 +407,64 @@ _Internet I_ 가 패킷을 보낼 destination은 _client A_ 이므로 destinatio
 <br>
 <hr>
 <br>
+
+## Level 7
+
+<div align="center">
+    <img src="./images/level/question/Lv7.png" height="600px">
+</div>
+
+<br>
+
+Level 7에서 유의할 점은 <b>IP 주소 겹침(IP address overlap)</b>이다. 네트워크 구성에서 발생하는 문제 중 하나로, 동일한 IP 주소 범위가 서로 다른 서브넷 또는 네트워크에서 중복 사용될 때 발생한다. <br>
+
+따라서 세 개의 서브넷이 구분되어야 한다. <br>
+
+    1. Interface A1 과 Interface R1
+    2. Interface R1 과 Interface R2
+    3. Interface R2 와 Interface C1
+
+세 개의 서브넷을 구분짓기 위해서는 <b>_/26_</b> 의 서브넷 마스크가 용이하다. 그렇게 하면, 00 01 10 11 의 네 가지 경우가 생성되어 배분하기 적절하다.<br>
+
+    Subnet 1. 115.198.14.1 ~ 115.198.14.62
+                   (115.198.14.00000001 ~ 115.198.14.00111110)
+
+    Subnet 2. 115.198.14.65 ~ 115.198.14.124
+                   (115.198.14.01000001 ~ 115.198.14.00111110)
+
+    Subnet 3. 115.198.14.129 ~ 115.198.14.190
+                   (115.198.14.10000001 ~ 115.198.14.10111110)
+
+    Subnet 4. 115.198.14.193 ~ 115.198.14.254
+                   (115.198.14.11000001 ~ 115.198.14.11111110)
+
+우선, _Interface R11_ 의 IP 주소가 _115.198.14.1_ 로 **Subnet 1**에 해당되어 _Interface A1_ 의 IP 주소는 <b>_115.198.14.2 ~ 115.198.14.62_</b> 사이의 값을 갖는다. <br>
+
+_Interface R12_ 의 IP 주소가 _115.198.14.254_ 로 **Subnet 4**에 해당되어 _Interface R21_ 의 IP 주소는 <b>_115.198.14.193 ~ 115.198.14.253_</b> 사이의 값을 갖는다. <br>
+
+**Subnet 2** 와 **Subnet 3** 중 하나를 택해 _Interface R22_ 와 _Interface C1_ 의 IP 주소를 결정하면 된다. <br>
+
+<br>
+
+문제에서 _dev.non-real.net need to communicate with accounting.non-real.net_ 이라 명시되어 있다. 즉, _client A_ 와 _client C_ 가 라우터를 활용하여 통신해야 한다. <br>
+
+<img src="./images/level/question/Lv7_clientA.png" height="100px"><br>
+_client A_ 의 라우팅 테이블에서 destination은 _client C_ (_Interface C1_) 의 IP 주소와 서브넷 마스크를 CIDR 표기법으로 입력한다. 그리고 패킷이 전달될 수 있도록 다음 라우터(_Interface R11_) IP 주소를 입력한다. (또는 _default_ 를 입력해도 무관하다.) <br>
+
+<img src="./images/level/question/Lv7_clientC.png" height="100px"><br>
+_client C_ 의 라우팅 테이블에서 destination은 _client A_ (_Interface A1_) 의 IP 주소와 서브넷 마스크를 CIDR 표기법으로 입력한다. 그리고 패킷이 전달될 수 있도록 다음 라우터(_Interface R22_) IP 주소를 입력한다. (또는 _default_ 를 입력해도 무관하다.) <br>
+
+<img src="./images/level/question/Lv7_R1.png" height="100px"><br>
+_router R1_ 의 라우팅 테이블에서 destination은 _default_ 로 작성한다. 그리고 패킷이 전달될 수 있도록 다음 라우터(_Interface R21_) IP 주소를 입력한다. <br>
+
+<img src="./images/level/question/Lv7_R2.png" height="100px"><br>
+_router R2_ 의 라우팅 테이블에서 destination은 _default_ 로 작성한다. 그리고 패킷이 전달될 수 있도록 다음 라우터(_Interface R12_) IP 주소를 입력한다. <br>
+
+    💡 디폴트 라우트(default 또는 0.0.0.0/0)를 사용하면 라우팅 테이블을 간단하게 유지할 수 있다. 목적지 주소가 수천 개 또는 그 이상인 대규모 네트워크에서 모든 목적지를 명시적으로 정의하는 것은 번거로울 수 있으며, 디폴트 라우트를 사용하면 테이블의 크기를 줄일 수 있다.
+
+<details>
+<summary>Level 7</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv7.png" height="600px">
+</div>
+</details>
