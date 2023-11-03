@@ -123,7 +123,8 @@ IP 주소와 그와 관련된 서브넷 마스크를 표기하기 위한 방법�
 
 <br>
 
-    예시 2) IPv4의 C 클래스 네트워크를 26개의 서브넷으로 나누고 , 각 서브넷에는 4~5개의 호스트를 연결하려고 한다. 이러한 서브넷을 구성하기 위한 서브넷 마스크 값은?
+    예시 2) IPv4의 C 클래스 네트워크를 26개의 서브넷으로 나누고 , 각 서브넷에는 4~5개의 호스트를 연결하려고 한다.
+    이러한 서브넷을 구성하기 위한 서브넷 마스크 값은?
 
     255.255.255.128 의 경우 2개의 서브넷으로 나눌 수 있다. (네트워크 주소를 1개 쓸 경우, 0 또는 1)
     255.255.255.192 의 경우 4개의 서브넷으로 나눌 수 있다. (네트워크 주소를 2개 쓸 경우, 00 01 10 11)
@@ -278,13 +279,13 @@ IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소�
 Level 3는 _Interface A1_, _Interface B1_, _Interface C1_ 이 하나의 스위치로 연결되어 있다. <br>
 스위치는 여러 개의 LAN 케이블을 연결하기 위한 접선 장치이기 때문에 우선 _Interface A1_, _Interface B1_ 의 서브넷 마스크는 _Interface C1_ 의 서브넷 마스크와 일치해야 하므로 <b>_255.255.255.128_</b> 이다. <br>
 
-_Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & 연산하면, <br>
+_Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & 연산하면 다음과 같다. <br>
 
     Interface C1 IP | 01101000 11000110 11011011 01111101
     Subnet Mask     | 11111111 11111111 11111111 10000000
     & 연산           | 01101000 11000110 11011011 00000000
 
-서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface A1_, _Interface B1_ 가 가질 수 있는 IP 주소의 범위는 00000000 부터 01111111 로 <b>_104.198.219.1 ~ 104.198.219.126_</b> 사이에서 _Interface C1_ 의 IP 주소를 제외한 값이다. (마찬가지로 0은 네트워크 주소, 127은 브로드캐스트 주소이다.)
+서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface A1_, _Interface B1_ 이 가질 수 있는 IP 주소의 범위는 00000000 부터 01111111 로 <b>_104.198.219.1 ~ 104.198.219.126_</b> 사이에서 _Interface C1_ 의 IP 주소를 제외한 값이다. (마찬가지로 0은 네트워크 주소, 127은 브로드캐스트 주소이다.)
 
 <details>
 <summary>Level 3</summary>
@@ -292,3 +293,46 @@ _Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & �
     <img src="./images/level/answer/Lv3.png" height="550px">
 </div>
 </details>
+
+<br>
+<hr>
+<br>
+
+## Level 4
+
+<div align="center">
+    <img src="./images/level/question/Lv4.png" height="550px">
+</div>
+
+<br>
+
+Level 4는 _Interface A1_, _Interface B1_, _Interface R1_ 이 하나의 스위치로 연결되어 있다. 따라서 세 Interface의 서브넷 마스크 값은 같아야 한다. <br>
+제시된 문제에서는 아무것도 적혀있지 않으므로 계산에 편리하게 <b>_/24 (255.255.255.0)_</b> 로 작성한다. <br>
+_Interface A1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연산하면 다음과 같다. <br>
+
+    Interface A1 IP | 01100001 10101010 01110101 10000100
+    Subnet Mask     | 11111111 11111111 11111111 00000000
+    & 연산           | 01100001 10101010 01110101 00000000
+
+서브넷 마스크에 따라 아래 8 비트를 변경할 수 있으므로, _Interface B1_, _Interface R1_ 이 가질 수 있는 IP 주소의 범위는 <b>_97.170.117.1 ~ 97.170.117.132.254_</b> 사이에서 _Interface A1_ IP 주소를 제외해야 한다. 추가로 _Interface R1_ 은 _Interface R2_, _Interface R3_ 와 중복되지 않는 의 IP 주소 값을 가져야한다.
+
+<details>
+<summary>Level 4</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv4.png" height="550px">
+</div>
+</details>
+
+<br>
+<hr>
+<br>
+
+## Level 5
+
+<div align="center">
+    <img src="./images/level/question/Lv5.png" height="550px">
+</div>
+
+<br>
+
+Level 5
