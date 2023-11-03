@@ -136,7 +136,7 @@ IP 주소와 그와 관련된 서브넷 마스크를 표기하기 위한 방법�
 
 ## Hub
 
-<img src="./images/hub.png" height="150px">
+<img src="./images/hub.png" height="130px">
 
 허브는 여러 개의 LAN 케이블을 연결하는 접선 장치다. 컴퓨터는 포트와 일대일로 연결되기 때문에 허브의 포트 수가 그 허브에 연결할 수 있는 컴퓨터의 수다. <br>
 제품에 따라 포트 수는 다양하지만, 만약 포트 수가 부족하면 여러 대의 허브를 연결하는 형태로 간단하게 포트를 늘릴 수 있다.
@@ -153,7 +153,7 @@ IP 주소와 그와 관련된 서브넷 마스크를 표기하기 위한 방법�
 
 ## Router
 
-<img src="./images/router.png" height="110px"><br>
+<img src="./images/router.png" height="130px"><br>
 
 서로 다른 네트워크를 상호 연결하기 위해 사용한다. 라우터는 네트워크 프로토콜 수준에서 경로 정보(라우팅 테이블)를 관리한다. 이 경로 정보를 기반으로 수신지의 네트워크로 통신 데이터를 중계한다. <br>
 라우터가 대응하는 프로토콜은 제품마다 정해져 있으며, 저렴한 제품은 IP에만 대응하는 것이 일반적이다. 이 경우 경로를 선택할 때 주소 정보로 IP 주소를 사용한다. <br>
@@ -534,3 +534,78 @@ _router R1_, _router R2_, _client C_, _client D_ 라우팅 테이블의 destinat
     <img src="./images/level/answer/Lv8.png" height="600px">
 </div>
 </details>
+
+<br>
+<hr>
+<br>
+
+## Level 9
+
+<div align="center">
+    <img src="./images/level/question/Lv9.png" height="750px">
+</div>
+
+<br>
+
+Level 9는 위의 문제들과는 다르게 IP 주소를 임의로 작성해 주어야 하기 때문에 다음의 사설 IP 주소는 피하도록 한다. <br>
+
+    10.0.0.0 ~ 10.255.255.255
+    172.16.0.0 ~ 172.31.255.255
+    192.168.0.0 ~ 192.168.255.255
+
+<br>
+
+<img src="./images/level/question/Lv9_1.png" width="400px"><br>
+
+우선 _Interface R23_ 과 _Interface D1_ 을 해결한다. _client D_ 의 라우팅 테이블의 Next hop이 _90.195.69.214_ 이므로, _Interface R23_ 의 IP는 <b>_90.195.69.214_</b> 이다. <br>
+그리고 _Interface D1_ 의 서브넷 마스크도 _Interface R23_ 과 마찬가지로 <b>_/18_</b> 이다. <br>
+_Interface D1_ 의 IP 주소의 범위는 <b>_90.195.64.1 ~ 90.195.127.254_</b> 이다. <br>
+
+<br>
+
+<img src="./images/level/question/Lv9_2.png" width="400px"><br>
+
+_Interface B1_ 과 _Interface A1_ 과 _Interface R11_ 은 같은 스위치에 연결되어 있으므로, 세 Interface 의 서브넷 마스크는 <b>_255.255.255.128_</b> 로 동일하다. <br>
+세 개의 Interface 의 IP 주소는 사설 IP 주소만 피하면 되므로, 임의로 <b>_11.11.11.x_</b> 로 작성한다. <br>
+_client A_ 와 _client B_ 의 라우팅 테이블의 Next hop은 <b>_Interface R11의 IP 주소_</b> 로 입력한다. <br>
+
+<br>
+
+<img src="./images/level/question/Lv9_3.png" width="400px"><br>
+
+_Interface R21_ 과 _Interface R13_ 이 연결되어 있으므로, 같은 서브넷 마스크를 사용하기 때문에 _Interface R13_ 의 서브넷 마스크 값은 <b>_255.255.255.252_</b> 이다. <br>
+_router R1_ 은 _Interface R21_ 를 통해 통신하므로, Next hop에 <b>_Interface R21의 IP 주소_</b> 로 입력한다. <br>
+_router R2_ 은 _Interface R13_ 를 통해 통신하므로, Next hop에 <b>_Interface R13의 IP 주소_</b> 로 입력한다. <br>
+
+<br>
+
+<img src="./images/level/question/Lv9_4.png" width="400px"><br>
+
+_Interface R22_ 와 _Interface C1_ 은 연결되어 있으므로 같은 서브넷 마스크를 공유한다. 값이 정해져 있지 않으므로 임의의 값으로 <b>_/24_</b> 를 입력한다. <br>
+_Interface R22_ 와 _Interface C1_ 의 IP 주소도 정의되어 있지 않으므로, 사설 IP 주소만 피하면 되므로, 임의로 <b>_22.22.22.x_</b> 로 작성한다. <br>
+_client C_ 는 _Interface R22_ 를 통해 통신하므로, Next hop에 <b>_Interface R22의 IP 주소_</b> 로 입력한다. <br>
+
+<br>
+
+<img src="./images/level/question/Lv9_5.png" width="400px"><br>
+
+_Goal 3_ 와 _Goal 6_ 을 고려했을 때, _internet I_ 의 destination에 들어갈 수 있는 IP 주소는 <b>_client A: meson_ 과 _client C: cation_ 의 IP 주소</b>를 각각 입력한다.
+
+<details>
+<summary>Level 9</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv9.png" height="600px">
+</div>
+</details>
+
+<br>
+<hr>
+<br>
+
+## Level 10
+
+<div align="center">
+    <img src="./images/level/question/Lv10.png" height="750px">
+</div>
+
+<br>
