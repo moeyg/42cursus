@@ -172,7 +172,7 @@ IP 주소가 집 주소라면 라우터는 우체국의 역할과 비슷하다. 
 
 라우팅 테이블은 네트워크 장비인 라우터 등에 사용되는 데이터 통신의 결정을 지원하는 중요한 도구이다. 라우팅 테이블은 목적지 네트워크로 패킷을 전달할 때 어떤 경로를 선택해야 하는지 결정하는데 사용된다. <br>
 
-<img src="./images/routing_table.png" height="200px"><br>
+<img src="./images/routing_table.png" height="300px"><br>
 
 다음은 라우팅 테이블에 대한 주요 특징과 역할에 대한 설명이다.
 
@@ -230,7 +230,7 @@ _Interface B1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 ## Level 2
 
 <div align="center">
-    <img src="./images/level/question/Lv2.png" height="450px">
+    <img src="./images/level/question/Lv2.png" height="500px">
 </div>
 
 <br>
@@ -260,7 +260,7 @@ IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소�
 <details>
 <summary>Level 2</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv2.png" height="450px">
+    <img src="./images/level/answer/Lv2.png" height="500px">
 </div>
 </details>
 
@@ -271,7 +271,7 @@ IP Address 1과 4의 경우는 네트워크 주소와 브로드캐스트 주소�
 ## Level 3
 
 <div align="center">
-    <img src="./images/level/question/Lv3.png" height="550px">
+    <img src="./images/level/question/Lv3.png" height="600px">
 </div>
 
 <br>
@@ -290,7 +290,7 @@ _Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & �
 <details>
 <summary>Level 3</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv3.png" height="550px">
+    <img src="./images/level/answer/Lv3.png" height="600px">
 </div>
 </details>
 
@@ -301,7 +301,7 @@ _Interface C1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & �
 ## Level 4
 
 <div align="center">
-    <img src="./images/level/question/Lv4.png" height="550px">
+    <img src="./images/level/question/Lv4.png" height="600px">
 </div>
 
 <br>
@@ -319,7 +319,7 @@ _Interface A1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 <details>
 <summary>Level 4</summary>
 <div align="center">
-    <img src="./images/level/answer/Lv4.png" height="550px">
+    <img src="./images/level/answer/Lv4.png" height="600px">
 </div>
 </details>
 
@@ -330,9 +330,31 @@ _Interface A1_ IP 주소와 해당 서브넷 마스크 _255.255.255.0_ 을 & 연
 ## Level 5
 
 <div align="center">
-    <img src="./images/level/question/Lv5.png" height="550px">
+    <img src="./images/level/question/Lv5.png" height="600px">
 </div>
 
 <br>
 
-Level 5
+Level 5는 _Interface R1_, _Interface A1_ 그리고 _Interface R2_, _Interface B1_ 이 각각 LAN으로 연결되어 있다. <br>
+따라서, _Interface A1_ 의 서브넷 마스크는 _Interface R1_ 과 동일하게 <b>_255.255.255.128_</b> 을 갖는다.
+_Interface R1_ IP 주소와 해당 서브넷 마스크 _255.255.255.128_ 을 & 연산하면 다음과 같다. <br>
+
+    Interface R1 IP | 01011001 00010010 00010111 01111110
+    Subnet Mask     | 11111111 11111111 11111111 10000000
+    & 연산           | 01011001 00010010 00010111 00000000
+
+서브넷 마스크에 따라 아래 7 비트를 변경할 수 있으므로, _Interface A1_ 이 가질 수 있는 IP 주소의 범위는 <b>_89.18.23.1 ~ 89.18.23.126_</b> 이다. <br>
+
+_Interface B1_ 의 서브넷 마스크는 _Interface R2_ 과 동일하게 <b>_255.255.192.0_</b> 을 갖는다.
+_Interface R2_ IP 주소와 해당 서브넷 마스크 _255.255.192.0_ 을 & 연산하면 다음과 같다. <br>
+
+    Interface R2 IP | 10100101 10111110 11100101 11111110
+    Subnet Mask     | 11111111 11111111 11000000 00000000
+    & 연산           | 10100101 10111110 11000000 00000000
+
+서브넷 마스크에 따라 아래 14 비트를 변경할 수 있으므로, _Interface A1_ 이 가질 수 있는 IP 주소의 범위는 <b>_165.190.192.1 ~ 165.190.255.254_</b> 이다. <br>
+
+<br>
+
+_client A_ 가 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, <b>_Interface R1 의 IP 주소_</b> 를 입력한다. <br>
+_client B_ 도 패킷을 보낼 수 있는 경로는 오직 하나이므로 라우팅 테이블의 destination은 <b>_default_</b> 로 설정하고, <b>_Interface R2 의 IP 주소_</b> 를 입력한다.
