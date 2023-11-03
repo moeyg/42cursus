@@ -32,27 +32,25 @@ IP에는 경로를 선택하는 방법도 정의되어 있어 여러 개의 네�
 네트워크 혼잡 상태에 따라 패킷의 손실이나 지연에 의해 순서가 뒤바뀌지 않도록 몇 가지 방법을 사용한다.
 
 1. 분할 순으로 시퀀스 번호를 부여한다. <br>
-   <img src="./images/Numbering_in_division_order.png" height="120px">
+   <img src="./images/Numbering_in_division_order.png" height="150px">
 
 2. 수신 측에서는 수신 패킷(ACK 패킷)을 송신 측에 전송한다. <br>
-   <img src="./images/Transmit_ACK_packet.png" height="120px">
+   <img src="./images/Transmit_ACK_packet.png" height="150px">
 
 3. 일정 시간이 지나도 응답이 없는 경우 패킷을 재전송하여 손실을 방지한다. <br>
-   <img src="./images/re_send.png" height="120px">
+   <img src="./images/re_send.png" height="150px">
 
 <br>
 
 ## Packet
 
-패킷은 컴퓨터 통신에서 작게 분할된 통신 데이터 단위를 말한다. <br><br>
+패킷은 컴퓨터 통신에서 작게 분할된 통신 데이터 단위를 말한다. <br>
 
-<img src="./images/big_packet.png" height="120px">
-<br>
+<img src="./images/big_packet.png" height="150px">
 
-큰 데이터가 분할되지 않고 네트워크로 전송되면 이 데이터가 회선을 점유하여 다른 기기가 전혀 통신할 수 없는 문제가 발생한다. <br><br>
+큰 데이터가 분할되지 않고 네트워크로 전송되면 이 데이터가 회선을 점유하여 다른 기기가 전혀 통신할 수 없는 문제가 발생한다. <br>
 
-<img src="./images/small_packets.png" height="120px">
-<br>
+<img src="./images/small_packets.png" height="150px">
 
 따라서 통신 데이터 하나가 점유하는 시간을 최소로 만들어 회선을 공유하기 위해 패킷 단위로 작게 분할한다. <br>
 패킷에는 반드시 송신지와 수신지의 주소 같은 속성 정보가 포함되어 있어 네트워크를 통해 패킷이 올바른 목적지에 운반된다. <br>
@@ -104,21 +102,17 @@ IP 주소 클래스는 IP 주소 체계를 네 가지 주요 클래스로 나누
 
 ## Subnet Mask
 
-네트워크의 규모가 커지면 단일 네트워크로 관리하는 것이 사실상 어렵다. 특히 <b>_브로드캐스트_</b>라고 하는 네트워크 전체에 송신하는 데이터 전송이 발생할 경우 필요하지 않은 범위까지 불필요하게 회선을 사용하게 되어 네트워크 전체 효율이 나빠진다. <br><br>
+네트워크의 규모가 커지면 단일 네트워크로 관리하는 것이 사실상 어렵다. 특히 <b>_브로드캐스트_</b>라고 하는 네트워크 전체에 송신하는 데이터 전송이 발생할 경우 필요하지 않은 범위까지 불필요하게 회선을 사용하게 되어 네트워크 전체 효율이 나빠진다. <br>
 
 <div align="center">
     <img src="./images/subnet.png" height="300px">
 </div>
 
-<br>
-
-이러한 문제를 해결하기 위해 네트워크를 논리적으로 분할하는데, 이것이 <b>_서브넷_</b>이다. 즉, 원래는 하나여야 할 네트워크를 작은 단위로 분할한 것을 말한다. <br><br>
+이러한 문제를 해결하기 위해 네트워크를 논리적으로 분할하는데, 이것이 <b>_서브넷_</b>이다. 즉, 원래는 하나여야 할 네트워크를 작은 단위로 분할한 것을 말한다. <br>
 
 <div align="center">
     <img src="./images/subnet_mask.png" height="200px">
 </div>
-
-<br>
 
 <b>_서브넷 마스크_</b>는 이러한 서브넷을 표현하기 위한 값으로, IP 주소의 앞에서부터 몇 비트까지 네트워크 주소로 사용할지 정의하기 위해 사용한다. <br>
 IP 주소는 네트워크 주소 부분과 호스트 주소 부분으로 나뉘는데, 서브넷 마스크에 의해 호스트 주소 부분 중 몇 개의 비트를 네트워크 주소 부분으로 재정의하여, 단일 네트워크를 서브넷으로 구분할 수 있다. <br>
