@@ -631,6 +631,9 @@ _Goal 3_ 와 _Goal 6_ 을 고려했을 때, _internet I_ 의 destination에 들�
 
 ## Level 10
 
+<details>
+<summary>Commentary</summary>
+
 <div align="center">
     <img src="./images/level/question/Lv10.png" height="750px">
 </div>
@@ -689,6 +692,8 @@ _Interface H41_ 의 IP 주소와 서브넷 마스크를 & 연산하면 다음과
 
 지금까지 위의 범위를 사용하지 않으면서, 인터넷 라우팅 테이블의 destination 범위 안에 있으려면, _Interface R22_ 와 _Interface R31_ 의 서브넷 마스크는 <b>/27</b> 이 적당하다. <br>
 하지만, _Interface R13_ 과 _Interface R21_ 이 끝 범호 _253, 254_ 는 사용하고 있으므로, <b>_160.132.114.193/27 ~ 160.132.114.252/27_</b> 범위 내에서 IP 주소를 입력한다. <br>
+
+</details>
 
 <details>
 <summary>Answer</summary>
