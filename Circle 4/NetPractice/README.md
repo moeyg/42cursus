@@ -636,3 +636,63 @@ _Goal 3_ 와 _Goal 6_ 을 고려했을 때, _internet I_ 의 destination에 들�
 </div>
 
 <br>
+
+Level 10은 4개의 네트워크가 존재한다. <br>
+
+    router R1 --- switch S1
+    router R1 --- router R2
+    router R2 --- client H4
+    router R2 --- client H3
+
+따라서 IP 주소를 설정할 때는 IP 주소가 1) 인터넷의 destination 범위 안에 존재해야 하며, 2) 4개의 네트워크의 IP 주소 범위가 겹쳐서는 안 된다. <br>
+
+<img src="./images/level/question/Lv10_1.png" width="400px"><br>
+
+고정값으로 제시되어 있는 IP 주소들은 공통적으로 _160.132.114.xxx_ 로 구성되어 있다. <br>
+따라서 _internet I_ 라우팅 테이블의 destination 값을 <b>_160.132.144.0/24_</b> 로 설정한다. <br>
+서브넷 마스크를 <b>_/24_</b> 로 설정하면 패킷을 보낼 수 있는 모든 네트워크의 범위 <b>_163.172.144.1 ~ 163.172.144.254_</b> 를 가질 수 있다. <br>
+
+<img src="./images/level/question/Lv10_2.png" width="400px"><br>
+
+우선 _Interface R11_ 과 _switch S1_ 으로 연결된 _Interface H11_ 과 _Interface H21_ 을 같은 서브넷 마스크(_/25_)로 설정한다. <br>
+_Interface R11_ 의 IP 주소와 서브넷 마스크를 & 연산하면 다음과 같은 주소 범위가 나온다. <br>
+
+    160.132.114.1 ~ 160.132.114.126
+
+따라서 _Interface H11_ 과 _Interface H21_ 의 IP 주소를 위의 서브넷 네트워크 범위 내에서 설정한다. <br>
+
+<img src="./images/level/question/Lv10_3.png" width="400px"><br>
+
+다음으로 _Interface R13_ 과 _Interface R21_ 이 연결되어 있으므로, _Interface R13_ 의 <b>서브넷 마스크(/30)를 일치시킨다.</b> <br>
+_router R1_ 에는 Next hop을 _Interface R21_ 로 사용한 목적지를 작성해야 하는데, 목적지가 _client H4_ 또는 _client H3_ 가 될 수 있으므로 <b>_default_</b> 로 입력한다. <br>
+
+<img src="./images/level/question/Lv10_4.png" width="400px"><br>
+
+_Interface R23_ 은 _Interface H41_ 과 연결되어 있으므로 <b>서브넷 마스크(/26)를 일치시킨다.</b> <br>
+_Interface H41_ 의 IP 주소와 서브넷 마스크를 & 연산하면 다음과 같은 주소 범위가 나온다. <br>
+
+    160.132.114.129 ~ 160.132.114.191
+
+따라서 _Interface R23_ 의 IP 주소를 위의 서브넷 네트워크 범위 내에서 설정한다. <br>
+
+    router R1 --- switch S1
+        : 160.132.114.1/25 ~ 160.132.114.126/25
+
+    router R1 --- router R2
+        : 160.132.114.253/30 ~ 160.132.114.254/30
+
+    router R2 --- client H4
+        : 160.132.114.129/26 ~ 160.132.114.191/26
+
+    router R2 --- client H3
+        : 160.132.114.193/27 ~ 160.132.114.254/27
+
+지금까지 위의 범위를 사용하지 않으면서, 인터넷 라우팅 테이블의 destination 범위 안에 있으려면, _Interface R22_ 와 _Interface R31_ 의 서브넷 마스크는 <b>/27</b> 이 적당하다. <br>
+하지만, _Interface R13_ 과 _Interface R21_ 이 끝 범호 _253, 254_ 는 사용하고 있으므로, <b>_160.132.114.193/27 ~ 160.132.114.252/27_</b> 범위 내에서 IP 주소를 입력한다. <br>
+
+<details>
+<summary>Answer</summary>
+<div align="center">
+    <img src="./images/level/answer/Lv10.png" height="750px">
+</div>
+</details>
