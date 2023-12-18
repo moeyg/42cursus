@@ -110,13 +110,13 @@ void	Account::_displayTimestamp()
 	time_t currentTime = time(NULL);
     struct tm *localTime = localtime(&currentTime);
 
-    std::cout << "[";
+    std::cout << '[';
     std::cout << 1900 + localTime->tm_year;
-    std::cout << (localTime->tm_mon + 1 < 10 ? "0" : "") << localTime->tm_mon + 1;
-    std::cout << (localTime->tm_mday < 10 ? "0" : "") << localTime->tm_mday;
-    std::cout << "_";
-    std::cout << (localTime->tm_hour < 10 ? "0" : "") << localTime->tm_hour;
-    std::cout << (localTime->tm_min < 10 ? "0" : "") << localTime->tm_min;
-    std::cout << (localTime->tm_sec < 10 ? "0" : "") << localTime->tm_sec;
+    std::cout << (localTime->tm_mon + 1 < 10 ? '0' : "") << localTime->tm_mon + 1;
+    std::cout << (localTime->tm_mday < 10 ? '0' : "") << localTime->tm_mday;
+    std::cout << '_';
+    std::cout << (localTime->tm_hour < 10 ? '0' : "") << localTime->tm_hour;
+    std::cout << (localTime->tm_min < 10 ? '0' : "") << localTime->tm_min;
+    std::cout << (localTime->tm_sec < 10 ? '0' : "") << localTime->tm_sec;
     std::cout << "] ";
 }
