@@ -20,7 +20,7 @@ Account::Account()
 	_nbWithdrawals = 0;
 }
 
-Account::Account (int initial_deposit)
+Account::Account(int initial_deposit)
 {
 	_accountIndex = _nbAccounts;
 	_amount = initial_deposit;
