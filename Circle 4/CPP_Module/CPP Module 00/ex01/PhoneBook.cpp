@@ -12,10 +12,10 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : index(0), numOfContacts(0) { }
-PhoneBook::~PhoneBook() { }
+PhoneBook::PhoneBook(void) : index(0), numOfContacts(0) { }
+PhoneBook::~PhoneBook(void) { }
 
-void    PhoneBook::banner() const
+void    PhoneBook::banner(void) const
 {
     cout << "______  _                         ______                _" << endl;
     cout << "| ___ \\| |                        | ___ \\              | |" << endl;
@@ -25,7 +25,7 @@ void    PhoneBook::banner() const
     cout << "\\_|    |_| |_| \\___/ |_| |_| \\___|\\____/  \\___/  \\___/ |_|\\_\\" << endl;
 }
 
-void    PhoneBook::addContact()
+void    PhoneBook::addContact(void)
 {
     Contact contact;
     string input;
@@ -53,7 +53,7 @@ void    PhoneBook::addContact()
     cout << endl << "Contact added successfully." << endl << endl << endl;
 }
 
-void    PhoneBook::searchContact() const
+void    PhoneBook::searchContact(void) const
 {
     if (numOfContacts == 0)
     {
@@ -90,7 +90,7 @@ void    PhoneBook::displayContact(string contents) const
     cout << " " << setw(10) << contents << " |";
 }
 
-void    PhoneBook::displaySpecificContact() const
+void    PhoneBook::displaySpecificContact(void) const
 {
     int idx;
     cout << "> Enter the index of the specific contact: "; cin >> idx;
