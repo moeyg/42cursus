@@ -34,11 +34,11 @@ public:
     void    setNickname(const string &nickname);
     void    setPhoneNumber(const string &phoneNumber);
     void    setDarkestSecret(const string &darkestSecret);
-    string  getFirstName() const;
-    string  getLastName() const;
-    string  getNickname() const;
-    string  getPhoneNumber() const;
-    string  getDarkestSecret() const;
+    string  getFirstName(void) const;
+    string  getLastName(void) const;
+    string  getNickname(void) const;
+    string  getPhoneNumber(void) const;
+    string  getDarkestSecret(void) const;
 };
 
 #endif
