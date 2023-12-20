@@ -36,13 +36,13 @@ private:
     int numOfContacts;
 
 public:
-    PhoneBook();
-    ~PhoneBook();
-    void banner() const;
-    void addContact();
-    void searchContact() const;
+    PhoneBook(void);
+    ~PhoneBook(void);
+    void banner(void) const;
+    void addContact(void);
+    void searchContact(void) const;
     void displayContact(string contents) const;
-    void displaySpecificContact() const;
+    void displaySpecificContact(void) const;
 };
 
 # endif
