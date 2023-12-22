@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dogpark <dogpark@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 11:37:30 by dogpark           #+#    #+#             */
-/*   Updated: 2023/12/18 12:14:28 by dogpark          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-# ifndef __PHONEBOOK_HPP__
-# define __PHONEBOOK_HPP__
+#ifndef __PHONEBOOK_HPP__
+#define __PHONEBOOK_HPP__
 
 #include "Contact.hpp"
 #include <iostream>
