@@ -14,7 +14,7 @@ SRCS = main.cpp \
 OBJECTS = $(SRCS:.cpp=.o)
 
 # Library name
-NAME = ex03
+NAME = weapon
 
 all: $(NAME)
 

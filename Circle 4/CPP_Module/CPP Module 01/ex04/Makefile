@@ -12,7 +12,7 @@ SRCS = main.cpp \
 OBJECTS = $(SRCS:.cpp=.o)
 
 # Library name
-NAME = ex04
+NAME = streamEditor
 
 all: $(NAME)
 

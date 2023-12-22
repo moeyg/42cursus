@@ -3,6 +3,12 @@
 
 #include <iostream>
 
+#define RED     "\033[0;31m"
+#define GREEN   "\033[0;32m"
+#define YELLOW  "\033[0;33m"
+#define BLACK  "\033[0;30m"
+#define RESET   "\033[0m"
+
 namespace harlLevel
 {
     enum {DEBUG, INFO, WARNING, ERROR, WRONG};

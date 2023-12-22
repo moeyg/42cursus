@@ -14,7 +14,7 @@ SRCS = main.cpp \
 OBJECTS = $(SRCS:.cpp=.o)
 
 # Library name
-NAME = ex00
+NAME = zombie
 
 all: $(NAME)
 

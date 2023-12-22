@@ -11,7 +11,7 @@ SRCS = main.cpp \
 OBJECTS = $(SRCS:.cpp=.o)
 
 # Library name
-NAME = ex02
+NAME = HITHISISBRAIN
 
 all: $(NAME)
 

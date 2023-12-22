@@ -13,7 +13,7 @@ SRCS = main.cpp \
 OBJECTS = $(SRCS:.cpp=.o)
 
 # Library name
-NAME = ex01
+NAME = zombieHorde
 
 all: $(NAME)
 

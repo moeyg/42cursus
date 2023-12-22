@@ -46,7 +46,7 @@ bool    StreamEditor::openFiles(std::ifstream& inputFileStream, std::ofstream& o
     inputFileStream.open(filename);
     if (inputFileStream.fail())
     {
-        std::cerr << "Error: Failed to open the input file: " << filename << std::endl;
+        std::cerr << RED << "Error: Failed to open the input file: " << filename << RESET << std::endl;
         return false;
     }
 
@@ -54,10 +54,12 @@ bool    StreamEditor::openFiles(std::ifstream& inputFileStream, std::ofstream& o
     outputFileStream.open(outputFile);
     if (outputFileStream.fail())
     {
-        std::cerr << "Error: Failed to open the output file: " << outputFile << std::endl;
+        std::cerr << RED << "Error: Failed to open the output file: " << outputFile << RESET << std::endl;
         inputFileStream.close();
         return false;
     }
+
+    std::cout << YELLOW << "Complete: Replaced with input string." << RESET << std::endl;
 
     return true;
 }

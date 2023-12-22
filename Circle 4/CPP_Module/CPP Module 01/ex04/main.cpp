@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 4)
     {
-        std::cerr << "Error: Invalid number of arguments." << std::endl;
+        std::cerr << RED << "Error: Invalid number of arguments." << RESET << std::endl;
         return 1;
     }
 

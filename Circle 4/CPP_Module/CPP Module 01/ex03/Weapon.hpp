@@ -4,6 +4,10 @@
 #include <iostream>
 #include <string>
 
+#define RED    "\033[0;31m"
+#define YELLOW "\033[0;33m"
+#define RESET  "\033[0m"
+
 class Weapon
 {
 private:

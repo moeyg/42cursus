@@ -32,37 +32,42 @@ void    Harl::complain(std::string level)
         std::cout << std::endl;
         break;
     default:
-        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+        std::cout << RED << "[ Probably complaining about insignificant problems ]" << RESET << std::endl;
 		break;
     }
 }
 
 void    Harl::debug(void)
 {
+    std::cout << GREEN;
     std::cout << "[ DEBUG ]" << std::endl;
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger." << std::endl;
     std::cout << "I really do!" << std::endl;
-
+    std::cout << RESET;
 }
 
 void    Harl::info(void)
 {
+    std::cout << BLACK;
     std::cout << "[ INFO ]" << std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money." << std::endl;
     std::cout << "You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
-
+    std::cout << RESET;
 }
 
 void    Harl::warning(void)
 {
+    std::cout << YELLOW;
     std::cout << "[ WARNING ] " << std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
 	std::cout << "I’ve been coming here for years and you just started working here last month." << std::endl;
-
+    std::cout << RESET;
 }
 
 void    Harl::error(void)
 {
+    std::cout << RED;
     std::cout << "[ ERROR ] " << std::endl;
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
+    std::cout << RESET;
 }
