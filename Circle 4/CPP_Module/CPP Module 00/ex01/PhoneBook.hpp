@@ -22,6 +22,8 @@ private:
     Contact contacts[MAX_STORAGE];
     int index;
     int numOfContacts;
+    void displayContact(string contents) const;
+    void displaySpecificContact(void) const;
 
 public:
     PhoneBook(void);
@@ -29,8 +31,6 @@ public:
     void banner(void) const;
     void addContact(void);
     void searchContact(void) const;
-    void displayContact(string contents) const;
-    void displaySpecificContact(void) const;
 };
 
 # endif
