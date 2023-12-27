@@ -38,6 +38,8 @@ bool    StreamEditor::processFile()
     inputFileStream.close();
     outputFileStream.close();
 
+    std::cout << YELLOW << "Complete: Replaced with input string." << RESET << std::endl;
+
     return true;
 }
 
@@ -58,8 +60,6 @@ bool    StreamEditor::openFiles(std::ifstream& inputFileStream, std::ofstream& o
         inputFileStream.close();
         return false;
     }
-
-    std::cout << YELLOW << "Complete: Replaced with input string." << RESET << std::endl;
 
     return true;
 }
