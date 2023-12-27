@@ -10,7 +10,7 @@ bool    StreamEditor::processFile()
     std::ifstream inputFileStream;
     std::ofstream outputFileStream;
 
-    if (!openFiles(inputFileStream, outputFileStream)) { return false; }
+    if (!openFile(inputFileStream, outputFileStream)) { return false; }
 
     int s1Length = s1.length();
     int s2Length = s2.length();
@@ -43,7 +43,7 @@ bool    StreamEditor::processFile()
     return true;
 }
 
-bool    StreamEditor::openFiles(std::ifstream& inputFileStream, std::ofstream& outputFileStream)
+bool    StreamEditor::openFile(std::ifstream& inputFileStream, std::ofstream& outputFileStream)
 {
     inputFileStream.open(filename);
     if (inputFileStream.fail())
