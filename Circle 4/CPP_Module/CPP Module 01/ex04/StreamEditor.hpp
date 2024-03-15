@@ -16,7 +16,7 @@ private:
     std::string s1;
     std::string s2;
 
-    bool    openFile(std::ifstream& inputFileStream, std::ofstream& outputFileStream);
+    bool    openFiles(std::ifstream& inputFileStream, std::ofstream& outputFileStream);
 
 public:
     StreamEditor(const std::string& filename, const std::string& s1, const std::string& s2);
