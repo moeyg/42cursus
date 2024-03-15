@@ -1,0 +1,47 @@
+html {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  width: 600px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: dashed black 2px;
+}
+
+h2 {
+  font-style: italic;
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+ul {
+  background-color: #eeeeee;
+  border: rgb(60, 60, 157) 4px solid;
+  padding: 2em;
+  line-height: 2em;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: gray;
+}
+
+a:hover {
+  color: rgb(255, 121, 11);
+}
+
+.job-title {
+  color: gray;
+  font-style: italic;
+}
